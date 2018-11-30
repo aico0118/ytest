@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>裕隆汽車模具保養管理系統</title>
+  <link rel='stylesheet' href='../css/fontawesome-min.css'>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="stylesheet" href="../css/jquery-ui.min.css">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <script src="../js/jquery-3.3.1.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/jquery-ui-1.12.1.js"></script>
+  <div class="container-fluid page-container">
+    <div class="row h-100">
+      <div class="col-xl-2 col-lg-3 menu d-none">
+      </div>
+      <div class="main col-12">
+        <div class="row header py-2 align-items-center justify-content-between pr-3">
+        </div>
+        <div class="function row d-block">
+          <div class="function-title d-flex align-items-center px-4 justify-content-between" data-function-id="3-3"
+            data-page-mode="查詢頁面">
+          </div>
+
+          <div class="px-lg-5 px-3 pt-4 pb-2 function-content">
+
+
+            <form class="form mb-3 query-form" id="select-item-form">
+
+              <div class="form-group row align-items-center">
+                <label for="inputEmail3" class="col-sm-1 col-form-label">模組</label>
+                <div class="col-sm-5">
+                  <select class="form-control">
+                    <option>請選擇</option>
+                  </select>
+                </div>
+                <label for="inputPassword3" class="col-sm-1 col-form-label">授權版本</label>
+                <div class="col-sm-5">
+                  <select class="form-control">
+                    <option>請選擇</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+
+            <div class="text-right mb-3">
+              <button type="button" class="btn btn-success" onclick="window.location.href='3_3_m_add.html';"><i class="fas fa-plus mr-2"></i>新增模組</button>
+              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt mr-2"></i>刪除模組</button>
+            </div>
+            <hr>
+            <div class="mb-3 text-right">
+              <button type="button" class="btn btn-success mb-3" onclick="window.location.href='3_3_d_add.html';"><i
+                  class="fas fa-plus mr-2"></i>新增功能</button>
+              <button type="button" class="btn btn-danger mb-3"><i class="far fa-trash-alt mr-2"></i>刪除功能</button>
+              <div class="table-responsive  table-striped mb-2">
+                <table class="table  bg-white" id="select-item-table" currentItemName="車型(產品型號)" currentItemCode="car-type">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="td-actions d-flex align-items-center">
+                        <label class="list-item-checkbox check-all">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display"></div>
+                        </label>
+                        <span>編輯</span>
+                      </th>
+                      <th scope="col"> 模組名稱 <i class="fas fa-caret-down"></i></th>
+                      <th scope="col"> 功能代碼 <i class="fas fa-caret-down"></i></th>
+                      <th scope="col"> 功能名稱 <i class="fas fa-caret-down"></i></th>
+                      <th scope="col"> 授權版本 <i class="fas fa-caret-down"></i></th>
+                      <th scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="td-actions d-flex align-items-center">
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display"></div>
+                        </label>
+                        <span class="btn btn-outline-secondary btn-sm rounded rounded-circle" onclick=" window.location.href='../edit.html';"><i
+                            class="far fa-edit"></i>
+                        </span>
+                      </td>
+                      <th scope="row">權限管理</th>
+                      <td>MOLD5_1</td>
+                      <td>帳號管理</td>
+                      <td>旗艦版</td>
+                      <td class="align-items-center d-flex">
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none" checked>
+                          <div class="checkbox-display"></div>
+
+                        </label> <span>全部</span>
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display"></div>
+
+                        </label><span>新增</span>
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display "></div>
+
+                        </label>
+                        <span class="">修改</span>
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display "></div>
+
+                        </label><span class="">刪除</span>
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display "></div>
+
+                        </label> <span class="">查詢</span>
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display "></div>
+
+                        </label>
+                        <span class="">上傳</span>
+                        <label class="list-item-checkbox ">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display "></div>
+
+                        </label>
+                        <span class="">下載</span>
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="td-actions d-flex align-items-center">
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display"></div>
+                        </label>
+                        <span class="btn btn-outline-secondary btn-sm rounded rounded-circle" onclick=" window.location.href='../edit.html';"><i
+                            class="far fa-edit"></i>
+                        </span>
+                      </td>
+                      <th scope="row">權限管理</th>
+                      <td>MOLD5_1</td>
+                      <td>帳號管理</td>
+                      <td>旗艦版</td>
+                      <td class="align-items-center d-flex">
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none" checked>
+                          <div class="checkbox-display"></div>
+
+                        </label> <span>全部</span>
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display"></div>
+
+                        </label><span>新增</span>
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display "></div>
+
+                        </label>
+                        <span class="">修改</span>
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display "></div>
+
+                        </label><span class="">刪除</span>
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display "></div>
+
+                        </label> <span class="">查詢</span>
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display "></div>
+
+                        </label>
+                        <span class="">上傳</span>
+                        <label class="list-item-checkbox ">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display "></div>
+
+                        </label>
+                        <span class="">下載</span>
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="td-actions d-flex align-items-center">
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display"></div>
+                        </label>
+                        <span class="btn btn-outline-secondary btn-sm rounded rounded-circle" onclick=" window.location.href='../edit.html';"><i
+                            class="far fa-edit"></i>
+                        </span>
+                      </td>
+                      <th scope="row">權限管理</th>
+                      <td>MOLD5_1</td>
+                      <td>帳號管理</td>
+                      <td>旗艦版</td>
+                      <td class="align-items-center d-flex">
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none" checked>
+                          <div class="checkbox-display"></div>
+
+                        </label> <span>全部</span>
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display"></div>
+
+                        </label><span>新增</span>
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display "></div>
+
+                        </label>
+                        <span class="">修改</span>
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display "></div>
+
+                        </label><span class="">刪除</span>
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display "></div>
+
+                        </label> <span class="">查詢</span>
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display "></div>
+
+                        </label>
+                        <span class="">上傳</span>
+                        <label class="list-item-checkbox ">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display "></div>
+
+                        </label>
+                        <span class="">下載</span>
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="td-actions d-flex align-items-center">
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display"></div>
+                        </label>
+                        <span class="btn btn-outline-secondary btn-sm rounded rounded-circle" onclick=" window.location.href='../edit.html';"><i
+                            class="far fa-edit"></i>
+                        </span>
+                      </td>
+                      <th scope="row">權限管理</th>
+                      <td>MOLD5_1</td>
+                      <td>帳號管理</td>
+                      <td>旗艦版</td>
+                      <td class="align-items-center d-flex">
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none" checked>
+                          <div class="checkbox-display"></div>
+
+                        </label> <span>全部</span>
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display"></div>
+
+                        </label><span>新增</span>
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display "></div>
+
+                        </label>
+                        <span class="">修改</span>
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display "></div>
+
+                        </label><span class="">刪除</span>
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display "></div>
+
+                        </label> <span class="">查詢</span>
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display "></div>
+
+                        </label>
+                        <span class="">上傳</span>
+                        <label class="list-item-checkbox ">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display "></div>
+
+                        </label>
+                        <span class="">下載</span>
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="td-actions d-flex align-items-center">
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display"></div>
+                        </label>
+                        <span class="btn btn-outline-secondary btn-sm rounded rounded-circle" onclick=" window.location.href='../edit.html';"><i
+                            class="far fa-edit"></i>
+                        </span>
+                      </td>
+                      <th scope="row">權限管理</th>
+                      <td>MOLD5_1</td>
+                      <td>帳號管理</td>
+                      <td>旗艦版</td>
+                      <td class="align-items-center d-flex">
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none" checked>
+                          <div class="checkbox-display"></div>
+
+                        </label> <span>全部</span>
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display"></div>
+
+                        </label><span>新增</span>
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display "></div>
+
+                        </label>
+                        <span class="">修改</span>
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display "></div>
+
+                        </label><span class="">刪除</span>
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display "></div>
+
+                        </label> <span class="">查詢</span>
+                        <label class="list-item-checkbox">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display "></div>
+
+                        </label>
+                        <span class="">上傳</span>
+                        <label class="list-item-checkbox ">
+                          <input type="checkbox" class="d-none">
+                          <div class="checkbox-display "></div>
+
+                        </label>
+                        <span class="">下載</span>
+
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../js/index.js"></script>
+</body>
+
+</html>

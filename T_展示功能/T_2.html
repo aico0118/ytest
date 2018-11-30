@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>裕隆汽車模具保養管理系統</title>
+  <link rel='stylesheet' href='../css/fontawesome-min.css'>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="stylesheet" href="../css/jquery-ui.min.css">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/kendo.info.min.css">
+  <link rel="stylesheet" href="../css/example.css">
+  <script src="../js/jquery-3.3.1.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/kendo.all.min.js"></script>
+  <script src="../js/jquery-ui-1.12.1.js"></script>
+</head>
+
+<body>
+  <div class="container-fluid page-container">
+    <div class="row h-100">
+      <div class="col-xl-2 col-lg-3 menu d-none">
+      </div>
+      <div class="main col-12">
+        <div class="row header py-2 align-items-center justify-content-between pr-3">
+        </div>
+        <div class="function row d-block">
+          <div class="function-title d-flex align-items-center px-4 justify-content-between" data-function-id="2-1"
+            data-page-mode="查詢頁面">
+          </div>
+          <div class="px-lg-5 px-3 pt-4 pb-2 function-content">
+            <div class="row align-items-center">
+              <div class="col-xl-3">
+                <div class="table-responsive  table-striped table-click table-unpage">
+                  <table class="table  bg-white" prevName="" prevCode="">
+                    <thead>
+                      <tr class="alert-info">
+                        <th scope="col">選單類型 <i class="fas fa-caret-down"></i></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>車型(產品型號)</td>
+                      </tr>
+                      <tr>
+                        <td>不良位置</td>
+                      </tr>
+                      <tr>
+                        <td>分類</td>
+                      </tr>
+                      <tr>
+                        <td>單位</td>
+                      </tr>
+                      <tr>
+                        <td>公司別</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+              <div class="col-xl-9 mt-4 mt-xl-0">
+                <div class="card">
+                  <div class="alert-info card-header font-weight-bold">主要區塊一</div>
+                  <form class="form mb-3 px-5 py-2 query-form" id="select-item-form">
+                    <div class="form-row-group d-md-flex">
+                      <label for="inputEmail3" class="col-form-label">確保具有至少六個字的空間</label>
+                      <div class="flex-grow-1">
+                        <input type="text" class="form-control" id="inputCity" value="至少六個字的">
+                      </div>
+                      <label for="inputPassword3" class="col-form-label required">名稱</label>
+                      <div class="flex-grow-1">
+                        <input type="text" class="form-control" id="inputCity" value="車型樣式">
+                      </div>
+                    </div>
+                    <div class="form-row-group d-md-flex">
+                      <label for="inputEmail3" class="col-form-label">較短字數</label>
+                      <div class="flex-grow-1">
+                        <input type="text" class="form-control" id="inputCity" value="是">
+                      </div>
+                      <label for="inputPassword3" class="col-form-label">三個字</label>
+                      <div class="flex-grow-1">
+                        <input type="text" class="form-control" id="inputCity" value="三個字">
+                      </div>
+                    </div>
+                    <div class="form-row-group d-md-flex">
+                      <label for="inputEmail3" class="col-form-label">較短字數</label>
+                      <div class="flex-grow-1">
+                        <input type="text" class="form-control" id="inputCity" value="good-car-type">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="card px-5 py-3 mt-4">
+              <div class="form-row-group d-md-flex">
+                <label for="inputEmail3" class="col-form-label">較小的控制項尺寸</label>
+                <div class="flex-grow-1">
+                  <div class="input-group input-group-sm">
+                    <input class="form-control form-control-sm datepicker border-right-0">
+                    <div class="input-group-append btn-datepicker">
+                      <span class="input-group-text bg-white border-left-0 can-click"><i class="far fa-calendar-alt"></i></span>
+                    </div>
+                  </div>
+
+                </div>
+                <label for="inputPassword3" class="col-form-label">模具位置</label>
+                <div class="flex-grow-1">
+                  <div class="input-group input-group-sm">
+                    <input type="text" class="form-control form-control-sm" aria-label="Amount (to the nearest dollar)">
+                    <div class="input-group-append">
+                      <span class="input-group-text can-click open-pop1"><i class="fas fa-bars"></i></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row-group d-md-flex">
+                <label for="inputEmail3" class="col-form-label">確保具有至少六個字的空間</label>
+                <div class="flex-grow-1">
+                  <div class="input-group mb-3">
+                    <input class="form-control datepicker border-right-0">
+                    <div class="input-group-append btn-datepicker">
+                      <span class="input-group-text bg-white border-left-0 can-click"><i class="far fa-calendar-alt"></i></span>
+                    </div>
+                  </div>
+
+                </div>
+                <label for="inputPassword3" class="col-form-label">模具位置</label>
+                <div class="flex-grow-1">
+                  <div class="input-group">
+                    <input type="text" class="form-control">
+                    <div class="input-group-append">
+                      <span class="input-group-text can-click open-pop1"><i class="fas fa-bars"></i></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="text-right mt-3 mb-3">
+                <button type="button" class="btn btn-info">查詢</button>
+                <button type="button" class="btn btn-secondary">清空</button>
+              </div>
+            </div>
+            <hr>
+            <div class="mb-3 text-left">
+              <button type="button" class="btn btn-success mb-3 open-pop3"><i class="fas fa-plus mr-2"></i>新增表身</button>
+              <button type="button" class="btn btn-danger mb-3"><i class="far fa-trash-alt mr-2"></i>刪除表身</button>
+
+              <div id="grid" class="mb-3"></div>
+              <div class="table-responsive table-striped mb-2 w-100 height-200">
+                <table class="mx-auto table-sm bg-white table-bordered w-100 " id="select-item-table" currentItemName="車型(產品型號)"
+                  currentItemCode="car-type">
+                  <thead style="z-index: 9999;">
+                    <tr class="alert-info">
+                      <th scope="col">
+                        <div class="td-actions d-flex align-items-center">
+                          <label class="list-item-checkbox check-all">
+                            <input type="checkbox" style="z-index:9999;" class="d-none">
+                            <div class="checkbox-display" style="z-index:9999;"></div>
+                          </label>
+                          <span class="edit-label">編輯</span></div>
+                      </th>
+                      <th scope="col">代號<i class="fas fa-caret-down"></i></th>
+                      <th scope="col">設定1<i class="fas fa-caret-down"></i></th>
+                      <th scope="col">設定2<i class="fas fa-caret-down"></i></th>
+                      <th scope="col">設定3<i class="fas fa-caret-down"></i></th>
+                      <th scope="col">設定4<i class="fas fa-caret-down"></i></th>
+                      <th scope="col">設定5<i class="fas fa-caret-down"></i></th>
+                      <th scope="col">設定6<i class="fas fa-caret-down"></i></th>
+                      <th scope="col">設定7<i class="fas fa-caret-down"></i></th>
+                      <th scope="col">設定8<i class="fas fa-caret-down"></i></th>
+                      <th scope="col">設定9<i class="fas fa-caret-down"></i></th>
+                      <th scope="col">設定10<i class="fas fa-caret-down"></i></th>
+                      <th scope="col">狀態<i class="fas fa-caret-down"></i></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="td-actions d-flex align-items-center"> <label class="list-item-checkbox ">
+                            <input type="checkbox" class="d-none">
+                            <div class="checkbox-display" style="z-index:0;"></div>
+                          </label>
+                          <span class="btn btn-outline-secondary btn-sm rounded rounded-circle" data-toggle="modal"
+                            data-target="#pop2"><i class="far fa-edit"></i>
+                          </span></div>
+                      </td>
+                      <th scope="row">good-car-type</th>
+                      <td>車型(產品型號)S001</td>
+                      <td>車型(產品型號)工廠</td>
+                      <td>車型(產品型號)YLM</td>
+                      <td>廠級</td>
+                      <td>特色1</td>
+                      <td>特色2</td>
+                      <td>特色3</td>
+                      <td>特色4</td>
+                      <td>特色5</td>
+                      <td>特色6</td>
+                      <td>有效</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="td-actions d-flex align-items-center"> <label class="list-item-checkbox ">
+                            <input type="checkbox" class="d-none">
+                            <div class="checkbox-display"></div>
+                          </label>
+                          <span class="btn btn-outline-secondary btn-sm rounded rounded-circle" data-toggle="modal"
+                            data-target="#pop2"><i class="far fa-edit"></i>
+                          </span></div>
+                      </td>
+                      <th scope="row">good-car-type</th>
+                      <td>車型(產品型號)S002</td>
+                      <td>車型(產品型號)工廠</td>
+                      <td>車型(產品型號)YLM</td>
+                      <td>廠級</td>
+                      <td>特色1</td>
+                      <td>特色2</td>
+                      <td>特色3</td>
+                      <td>特色4</td>
+                      <td>特色5</td>
+                      <td>特色6</td>
+                      <td>有效</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="td-actions d-flex align-items-center"> <label class="list-item-checkbox ">
+                            <input type="checkbox" class="d-none">
+                            <div class="checkbox-display"></div>
+                          </label>
+                          <span class="btn btn-outline-secondary btn-sm rounded rounded-circle" data-toggle="modal"
+                            data-target="#pop2" data-backdrop="static"><i class="far fa-edit"></i>
+                          </span></div>
+                      </td>
+                      <th scope="row">good-car-type</th>
+                      <td>車型(產品型號)S003</td>
+                      <td>車型(產品型號)工廠</td>
+                      <td>車型(產品型號)YLM</td>
+                      <td>廠級</td>
+                      <td>特色1</td>
+                      <td>特色2</td>
+                      <td>特色3</td>
+                      <td>特色4</td>
+                      <td>特色5</td>
+                      <td>特色6</td>
+                      <td>有效</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="td-actions d-flex align-items-center"> <label class="list-item-checkbox ">
+                            <input type="checkbox" class="d-none">
+                            <div class="checkbox-display"></div>
+                          </label>
+                          <span class="btn btn-outline-secondary btn-sm rounded rounded-circle" data-toggle="modal"
+                            data-target="#pop2"><i class="far fa-edit"></i>
+                          </span></div>
+                      </td>
+                      <th scope="row">good-car-type</th>
+                      <td>車型(產品型號)S004</td>
+                      <td>車型(產品型號)工廠</td>
+                      <td>車型(產品型號)YLM</td>
+                      <td>廠級</td>
+                      <td>特色1</td>
+                      <td>特色2</td>
+                      <td>特色3</td>
+                      <td>特色4</td>
+                      <td>特色5</td>
+                      <td>特色6</td>
+                      <td>有效</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="td-actions d-flex align-items-center"> <label class="list-item-checkbox ">
+                            <input type="checkbox" class="d-none">
+                            <div class="checkbox-display"></div>
+                          </label>
+                          <span class="btn btn-outline-secondary btn-sm rounded rounded-circle" data-toggle="modal"
+                            data-target="#pop2"><i class="far fa-edit"></i>
+                          </span></div>
+                      </td>
+                      <th scope="row">good-car-type</th>
+                      <td>車型(產品型號)S005</td>
+                      <td>車型(產品型號)工廠</td>
+                      <td>車型(產品型號)YLM</td>
+                      <td>廠級</td>
+                      <td>特色1</td>
+                      <td>特色2</td>
+                      <td>特色3</td>
+                      <td>特色4</td>
+                      <td>特色5</td>
+                      <td>特色6</td>
+                      <td>有效</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="mx-auto row justify-content-between align-items-center">
+                <div class="col-xl-6 offset-xl-3">
+                  <nav aria-label="Page navigation">
+                    <ul class="pagination pagination-sm d-flex justify-content-center">
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                          <span aria-hidden="true">&laquo;</span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                          <span aria-hidden="true">&raquo;</span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+                <div class="col-xl-3 text-xl-right text-center"> <span class="">顯示 1 到 5 筆 / 共 332 筆</span></div>
+
+              </div>
+              <div id="pop1">
+                <div class="table-responsive  table-striped mb-2">
+                  <table class="table-sm table-bordered bg-white w-100">
+                    <thead>
+                      <tr class="alert-info">
+                        <th scope="col" class="width-100"></th>
+                        <th scope="col">模具位置 <i class="fas fa-caret-down"></i></th>
+                        <th scope="col">保母人員 <i class="fas fa-caret-down"></i></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="text-center"><button class="btn btn-primary btn-close">選擇</button></td>
+                        <td>T32</td>
+                        <td>前門</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center"><button class="btn btn-primary btn-close">選擇</button></td>
+                        <td>T32</td>
+                        <td>前門</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center"><button class="btn btn-primary btn-close">選擇</button></td>
+                        <td>T32</td>
+                        <td>前門</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center"><button class="btn btn-primary btn-close">選擇</button></td>
+                        <td>T32</td>
+                        <td>前門</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center"><button class="btn btn-primary btn-close">選擇</button></td>
+                        <td>T32</td>
+                        <td>前門</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center"><button class="btn btn-primary btn-close">選擇</button></td>
+                        <td>T32</td>
+                        <td>前門</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center"><button class="btn btn-primary btn-close">選擇</button></td>
+                        <td>T32</td>
+                        <td>前門</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center"><button class="btn btn-primary btn-close">選擇</button></td>
+                        <td>T32</td>
+                        <td>前門</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center"><button class="btn btn-primary btn-close">選擇</button></td>
+                        <td>T32</td>
+                        <td>前門</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center"><button class="btn btn-primary btn-close">選擇</button></td>
+                        <td>T32</td>
+                        <td>前門</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center"><button class="btn btn-primary btn-close">選擇</button></td>
+                        <td>T32</td>
+                        <td>前門</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center"><button class="btn btn-primary btn-close">選擇</button></td>
+                        <td>T32</td>
+                        <td>前門</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center"><button class="btn btn-primary btn-close">選擇</button></td>
+                        <td>T32</td>
+                        <td>前門</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center"><button class="btn btn-primary btn-close">選擇</button></td>
+                        <td>T32</td>
+                        <td>前門</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center"><button class="btn btn-primary btn-close">選擇</button></td>
+                        <td>T32</td>
+                        <td>前門</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center"><button class="btn btn-primary btn-close">選擇</button></td>
+                        <td>T32</td>
+                        <td>前門</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center"><button class="btn btn-primary btn-close">選擇</button></td>
+                        <td>T32</td>
+                        <td>前門</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center"><button class="btn btn-primary btn-close">選擇</button></td>
+                        <td>T32</td>
+                        <td>前門</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center"><button class="btn btn-primary btn-close">選擇</button></td>
+                        <td>T32</td>
+                        <td>前門</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center"><button class="btn btn-primary btn-close">選擇</button></td>
+                        <td>T32</td>
+                        <td>前門</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center"><button class="btn btn-primary btn-close">選擇</button></td>
+                        <td>T32</td>
+                        <td>前門</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center"><button class="btn btn-primary btn-close">選擇</button></td>
+                        <td>T32</td>
+                        <td>前門</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="text-right">
+                  <button type="button" class="btn btn-secondary btn-close">關閉</button>
+                </div>
+              </div>
+              <div id="pop2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <form class="form mb-3 px-5 py-2 query-form" id="select-item-form">
+                  <div class="form-row-group d-md-flex">
+                    <label for="inputEmail3" class="col-form-label">確保具有至少六個字的空間</label>
+                    <div class="flex-grow-1">
+                      <input type="text" class="form-control" id="inputCity" value="至少六個字的">
+                    </div>
+                    <label for="inputPassword3" class="col-form-label">名稱</label>
+                    <div class="flex-grow-1">
+                      <input type="text" class="form-control" id="inputCity" value="車型樣式">
+                    </div>
+                  </div>
+                  <div class="form-row-group d-md-flex">
+                    <label for="inputEmail3" class="col-form-label">較短字數</label>
+                    <div class="flex-grow-1">
+                      <input type="text" class="form-control" id="inputCity" value="是">
+                    </div>
+                    <label for="inputPassword3" class="col-form-label">三個字</label>
+                    <div class="flex-grow-1">
+                      <input type="text" class="form-control" id="inputCity" value="三個字">
+                    </div>
+                  </div>
+                  <div class="form-row-group d-md-flex">
+                    <label for="inputEmail3" class="col-form-label">較短字數</label>
+                    <div class="flex-grow-1">
+                      <input type="text" class="form-control" id="inputCity" value="good-car-type">
+                    </div>
+                  </div>
+                  <div class="mx-auto row justify-content-end mt-3">
+                    <button type="submit" class="btn btn-success mr-1">確定</button>
+                    <button type="submit" class="btn btn-danger">清空</button>
+                  </div>
+                </form>
+              </div>
+              <div id="pop3">
+                <form class="form mb-3 px-5 py-2 query-form" id="select-item-form">
+                  <div class="form-row-group d-md-flex">
+                    <label for="inputEmail3" class="col-form-label">確保具有至少六個字的空間</label>
+                    <div class="flex-grow-1">
+                      <input type="text" class="form-control" id="inputCity" value="至少六個字的">
+                    </div>
+                    <label for="inputPassword3" class="col-form-label">名稱</label>
+                    <div class="flex-grow-1">
+                      <input type="text" class="form-control" id="inputCity" value="車型樣式">
+                    </div>
+                  </div>
+                  <div class="form-row-group d-md-flex">
+                    <label for="inputEmail3" class="col-form-label">較短字數</label>
+                    <div class="flex-grow-1">
+                      <input type="text" class="form-control" id="inputCity" value="是">
+                    </div>
+                    <label for="inputPassword3" class="col-form-label">三個字</label>
+                    <div class="flex-grow-1">
+                      <input type="text" class="form-control" id="inputCity" value="三個字">
+                    </div>
+                  </div>
+                  <div class="form-row-group d-md-flex">
+                    <label for="inputEmail3" class="col-form-label">較短字數</label>
+                    <div class="flex-grow-1">
+                      <input type="text" class="form-control" id="inputCity" value="good-car-type">
+                    </div>
+                  </div>
+                  <div class="mx-auto row justify-content-end mt-3">
+                    <button type="submit" class="btn btn-success mr-1">確定</button>
+                    <button type="submit" class="btn btn-danger">清空</button>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../js/index.js"></script>
+  <script>
+    $(document).ready(function () {
+      var myWindow1 = $("#pop1"),
+        undo1 = $(".open-pop1");
+      undo1.on('click', function (e) {
+        myWindow1.data("kendoWindow").center().open();
+      });
+      myWindow1.kendoWindow({
+        width: "400px",
+        height: "400px",
+        title: "選擇",
+        visible: false,
+        modal: true,
+        actions: [
+          "Minimize",
+          "Maximize",
+          "Close"
+        ]
+      }).data("kendoWindow");
+
+      $('.btn-close').click(function () {
+        $(myWindow1).data("kendoWindow").close();
+      })
+
+      var myWindow2 = $("#pop2"),
+        undo2 = $("#grid");
+
+      undo2.on('click', function (e) {
+        if ($(e.target.parentElement).hasClass('open-pop2') || $(e.target).hasClass('open-pop2'))
+          myWindow2.data("kendoWindow").center().open();
+      });
+
+
+      myWindow2.kendoWindow({
+        width: "600px",
+        title: "編輯",
+        modal: true,
+        visible: false,
+        actions: [
+          "Minimize",
+          "Maximize",
+          "Close"
+        ]
+      }).data("kendoWindow");
+
+      var myWindow3 = $("#pop3"),
+        undo3 = $(".open-pop3");
+
+      undo3.on('click', function (e) {
+
+        myWindow3.data("kendoWindow").center().open();
+      });
+
+      myWindow3.kendoWindow({
+        width: "600px",
+        title: "新增",
+        visible: false,
+        modal: true,
+        actions: [
+          "Minimize",
+          "Maximize",
+          "Close"
+        ]
+      }).data("kendoWindow");
+      $("#grid").kendoGrid({
+        dataSource: {
+          data: [{
+            'id': 'good-car-type1',
+            'set1': '車型(產品型號)S001',
+            'set2': '車型(產品型號)工廠',
+            'set3': '車型(產品型號)YLM',
+            'set4': '廠級',
+            'set5': '特色1',
+            'set6': '特色2',
+            'set7': '特色3',
+            'set8': '特色4',
+            'set9': '特色5',
+            'set10': '特色6',
+            'state': '有效'
+          },
+          {
+            'id': 'good-car-type2',
+            'set1': '車型(產品型號)S002',
+            'set2': '車型(產品型號)工廠',
+            'set3': '車型(產品型號)YLM',
+            'set4': '廠級',
+            'set5': '特色1',
+            'set6': '特色2',
+            'set7': '特色3',
+            'set8': '特色4',
+            'set9': '特色5',
+            'set10': '特色6',
+            'state': '有效'
+          },
+          {
+            'id': 'good-car-type3',
+            'set1': '車型(產品型號)S003',
+            'set2': '車型(產品型號)工廠',
+            'set3': '車型(產品型號)YLM',
+            'set4': '廠級',
+            'set5': '特色1',
+            'set6': '特色2',
+            'set7': '特色3',
+            'set8': '特色4',
+            'set9': '特色5',
+            'set10': '特色6',
+            'state': '有效'
+          },
+          {
+            'id': 'good-car-type4',
+            'set1': '車型(產品型號)S004',
+            'set2': '車型(產品型號)工廠',
+            'set3': '車型(產品型號)YLM',
+            'set4': '廠級',
+            'set5': '特色1',
+            'set6': '特色2',
+            'set7': '特色3',
+            'set8': '特色4',
+            'set9': '特色5',
+            'set10': '特色6',
+            'state': '有效'
+          },
+          {
+            'id': 'good-car-type5',
+            'set1': '車型(產品型號)S005',
+            'set2': '車型(產品型號)工廠',
+            'set3': '車型(產品型號)YLM',
+            'set4': '廠級',
+            'set5': '特色1',
+            'set6': '特色2',
+            'set7': '特色3',
+            'set8': '特色4',
+            'set9': '特色5',
+            'set10': '特色6',
+            'state': '有效'
+          },
+          {
+            'id': 'good-car-type6',
+            'set1': '車型(產品型號)S006',
+            'set2': '車型(產品型號)工廠',
+            'set3': '車型(產品型號)YLM',
+            'set4': '廠級',
+            'set5': '特色1',
+            'set6': '特色2',
+            'set7': '特色3',
+            'set8': '特色4',
+            'set9': '特色5',
+            'set10': '特色6',
+            'state': '有效'
+          },
+          {
+            'id': 'good-car-type7',
+            'set1': '車型(產品型號)S007',
+            'set2': '車型(產品型號)工廠',
+            'set3': '車型(產品型號)YLM',
+            'set4': '廠級',
+            'set5': '特色1',
+            'set6': '特色2',
+            'set7': '特色3',
+            'set8': '特色4',
+            'set9': '特色5',
+            'set10': '特色6',
+            'state': '有效'
+          },
+          {
+            'id': 'good-car-type8',
+            'set1': '車型(產品型號)S008',
+            'set2': '車型(產品型號)工廠',
+            'set3': '車型(產品型號)YLM',
+            'set4': '廠級',
+            'set5': '特色1',
+            'set6': '特色2',
+            'set7': '特色3',
+            'set8': '特色4',
+            'set9': '特色5',
+            'set10': '特色6',
+            'state': '有效'
+          },
+          {
+            'id': 'good-car-type9',
+            'set1': '車型(產品型號)S009',
+            'set2': '車型(產品型號)工廠',
+            'set3': '車型(產品型號)YLM',
+            'set4': '廠級',
+            'set5': '特色1',
+            'set6': '特色2',
+            'set7': '特色3',
+            'set8': '特色4',
+            'set9': '特色5',
+            'set10': '特色6',
+            'state': '有效'
+          }],
+          pageSize: 10
+        },
+        height: 550,
+        sortable: true,
+        resizable: true,
+        noRecords: {
+          template: "查無資料"
+        },
+        pageable: {
+          refresh: true,
+          buttonCount: 5,
+          messages: {
+            display: "第 {0}-{1} 筆，共 {2} 筆"
+          }
+        },
+        columns: [{ selectable: true, width: "50px" },
+        {
+          template: "<span class='btn btn-outline-secondary btn-sm rounded rounded-circle open-pop2'> <i class='far fa-edit'></i></span> ",
+          title: "編輯",
+          width: 60
+        }, {
+          field: "id",
+          title: "代號",
+          width: 100
+        }, {
+          field: "set1",
+          title: "設定1",
+          width: 100
+        }, {
+          field: "set2",
+          title: "設定2",
+          width: 100
+        }, {
+          field: "set3",
+          title: "設定3",
+          width: 100
+        }, {
+          field: "set4",
+          title: "設定4",
+          width: 100
+        }, {
+          field: "set5",
+          title: "設定5",
+          width: 100
+        }, {
+          field: "set6",
+          title: "設定6",
+          width: 100
+        }, {
+          field: "set7",
+          title: "設定7",
+          width: 100
+        }, {
+          field: "set8",
+          title: "設定8",
+          width: 100
+        }, {
+          field: "set9",
+          title: "設定9",
+          width: 100
+        }, {
+          field: "set10",
+          title: "設定10",
+          width: 100
+        }, {
+          field: "state",
+          title: "狀態",
+          width: 100
+        }]
+      });
+      $(document.body).addClass("k-content");
+
+      // theme chooser dropdown
+      /*$(".themeChooser").kendoDropDownList({
+        dataSource: [
+          { text: "Black", value: "black" },
+          { text: "Blue Opal", value: "blueopal" },
+          { text: "Default", value: "default" },
+          { text: "Material", value: "material" },
+          { text: "Metro", value: "metro" },
+          { text: "Silver", value: "silver" },
+          { text: "Office365", value: "office365" },
+          { text: "Fiori", value: "fiori" },
+
+        ],
+        dataTextField: "text",
+        dataValueField: "value",
+        change: function (e) {
+          var theme = (this.value() || "default").toLowerCase();
+
+          changeTheme(theme);
+        }
+      });
+      */
+      // sample widgets on the page
+      $("#datetimepicker").kendoDateTimePicker();
+      $("#numeric").kendoNumericTextBox();
+      $("#slider").kendoSlider();
+      $("#tree").kendoTreeView({
+        dataSource: [
+          {
+            text: "foo", expanded: true, items: [
+              { text: "bar", selected: true }
+            ]
+          },
+          { text: "baz" }
+        ]
+      });
+
+      // loads new stylesheet
+      function changeTheme(skinName, animate) {
+        var doc = document,
+          kendoLinks = $("link[href*='kendo.']"),
+          commonLink = kendoLinks.filter("[href*='kendo.common']"),
+          skinLink = kendoLinks.filter(":not([href*='kendo.common'])"),
+          href = location.href,
+          skinRegex = /kendo\.\w+(\.min)?\.css/i,
+          extension = skinLink.attr("rel") === "stylesheet" ? ".css" : ".less",
+          newSkinUrl = skinLink.attr("href").replace(skinRegex, "kendo." + skinName + "$1" + extension);
+        debugger;
+
+        function preloadStylesheet(file, callback) {
+          var element = $("<link rel='stylesheet' href='" + file + "' \/>").appendTo("head");
+
+          setTimeout(function () {
+            callback();
+            element.remove();
+          }, 100);
+        }
+
+        function replaceTheme() {
+          var browser = kendo.support.browser,
+            oldSkinName = $(doc).data("kendoSkin"),
+            newLink;
+
+          if (browser.msie && browser.version < 10) {
+            newLink = doc.createStyleSheet(newSkinUrl);
+          } else {
+            newLink = skinLink.eq(0).clone().attr("href", newSkinUrl);
+            newLink.insertBefore(skinLink[0]);
+          }
+
+          skinLink.remove();
+
+          $(doc.documentElement).removeClass("k-" + oldSkinName).addClass("k-" + skinName);
+        }
+
+        if (animate) {
+          preloadStylesheet(url, replaceTheme);
+        } else {
+          replaceTheme();
+        }
+      };
+    });
+  </script>
+
+</body>
+
+</html>

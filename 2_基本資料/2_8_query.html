@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>裕隆汽車模具保養管理系統</title>
+  <link rel='stylesheet' href='../css/fontawesome-min.css'>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="stylesheet" href="../css/jquery-ui.min.css">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <script src="../js/jquery-3.3.1.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/jquery-ui-1.12.1.js"></script>
+  <div class="container-fluid page-container">
+    <div class="row h-100">
+      <div class="col-xl-2 col-lg-3 menu d-none">
+      </div>
+      <div class="main col-12">
+        <div class="row header py-2 align-items-center justify-content-between pr-3">
+        </div>
+        <div class="function row d-block">
+          <div class="function-title d-flex align-items-center px-4 justify-content-between" data-function-id="2-8"
+            data-page-mode="查詢頁面">
+          </div>
+
+          <div class="px-lg-5 px-3 pt-4 pb-2 function-content">
+            <form class="form mb-3 query-form" id="select-item-form">
+
+
+              <div class="form-row">
+                <div class="form-group col-lg-6">
+                  <label for="inputEmail4">公司</label>
+                  <select id="inputState" class="form-control">
+                    <option selected>1:古德模具</option>
+                    <option>2:王德福模具</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+            <div class="mb-3 text-right">
+              <div class="table-responsive  table-striped mb-2 lang-table">
+                <table class="table  bg-white" id="select-item-table" currentItemName="車型(產品型號)" currentItemCode="car-type">
+                  <thead>
+                    <tr>
+                      <th scope="col"> 代碼 <i class="fas fa-caret-down"></i></th>
+                      <th scope="col"> 預設顯示 <i class="fas fa-caret-down"></i></th>
+                      <th scope="col"> 中文說明</th>
+                      <th scope="col"> 簡中說明</th>
+                      <th scope="col"> 英文說明</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">DEPT</th>
+                      <td>部門</td>
+                      <td> <input type="text" class="form-control" value="部門" /></td>
+                      <td> <input type="text" class="form-control" /></td>
+                      <td> <input type="text" class="form-control" /></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">MODEL</th>
+                      <td>車型</td>
+                      <td> <input type="text" class="form-control" value="車型" /></td>
+                      <td> <input type="text" class="form-control" /></td>
+                      <td> <input type="text" class="form-control" /></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">PART</th>
+                      <td>部品</td>
+                      <td> <input type="text" class="form-control" value="部品" /></td>
+                      <td> <input type="text" class="form-control" /></td>
+                      <td> <input type="text" class="form-control" /></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">COMPANY</th>
+                      <td>公司</td>
+                      <td> <input type="text" class="form-control" value="公司" /></td>
+                      <td> <input type="text" class="form-control" /></td>
+                      <td> <input type="text" class="form-control" /></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">FUNC</th>
+                      <td>功能</td>
+                      <td> <input type="text" class="form-control" value="功能" /></td>
+                      <td> <input type="text" class="form-control" /></td>
+                      <td> <input type="text" class="form-control" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="mx-auto row justify-content-end mb-3">
+                <button type="submit" class="btn btn-success mr-1">儲存</button>
+                <button type="submit" class="btn btn-danger">回復</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script src="../js/index.js"></script>
+</body>
+
+</html>

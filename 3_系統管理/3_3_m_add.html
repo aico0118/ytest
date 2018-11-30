@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>裕隆汽車模具保養管理系統</title>
+  <link rel='stylesheet' href='../css/fontawesome-min.css'>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="stylesheet" href="../css/jquery-ui.min.css">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <script src="../js/jquery-3.3.1.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/jquery-ui-1.12.1.js"></script>
+  <div class="container-fluid page-container">
+    <div class="row h-100">
+      <div class="col-xl-2 col-lg-3 menu d-none">
+      </div>
+      <div class="main col-12">
+        <div class="row header py-2 align-items-center justify-content-between pr-3">
+        </div>
+        <div class="function row d-block">
+          <div class="function-title d-flex align-items-center px-4 justify-content-between" data-function-id="3-3"
+            data-page-mode="模組新增頁面">
+          </div>
+
+          <div class="px-lg-5 px-3 pt-4 pb-2 function-content">
+            <form class="form mb-3 query-form">
+              <div class="form-group row align-items-center">
+                <label for="inputEmail3" class="col-sm-1 col-form-label">模組代碼</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control">
+                </div>
+                <label for="inputPassword3" class="col-sm-1 col-form-label">模組名稱</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="form-group row align-items-center">
+                <label for="inputEmail3" class="col-sm-1 col-form-label">啟用日期</label>
+                <div class="col-sm-5">
+                  <input type="date" class="form-control">
+                </div>
+                <label for="inputPassword3" class="col-sm-1 col-form-label">停用日期</label>
+                <div class="col-sm-5">
+                  <input type="date" class="form-control">
+                </div>
+              </div>
+            </form>
+            <div class="mx-auto row justify-content-end mb-3">
+              <button type="submit" class="btn btn-success mr-1">確定</button>
+              <button type="submit" class="btn btn-secondary mr-1" onclick=" history.back();">回上一頁</button>
+              <button type="submit" class="btn btn-danger">清空</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../js/index.js"></script>
+</body>
+
+</html>

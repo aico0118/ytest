@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>裕隆汽車模具保養管理系統</title>
+  <link rel='stylesheet' href='css/fontawesome-min.css'>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <div class="container-fluid page-container">
+    <div class="row h-100">
+      <div class="col-xl-2 col-md-3 menu">
+        <div class="input-group my-3">
+          <input type="text" class="form-control border-0 " placeholder="搜尋......" aria-describedby="basic-addon2">
+          <div class="input-group-append border-0">
+            <span class=" input-group-text bg-white border-0" id="basic-addon2"><i class="fas fa-search"></i></span>
+          </div>
+        </div>
+        <ul class="flex-column mb-2 nav pb-2 text-center user-info-xs d-block d-md-none">
+          <li class="nav-item">
+            <span class="active nav-link"><i class="fa-building far"></i>　古德汽車模具供應</span>
+          </li>
+          <li class="nav-item">
+            <span class="nav-link"><i class="far fa-user"></i>　系統管理員</span>
+          </li>
+          <li class="nav-item">
+            <span class="nav-link"><i class="fas fa-key"></i>　admin000123
+            </span>
+          </li>
+          <li>
+            <button type="button" class="btn btn-info btn-block mb-2">基本資料維護</button>
+          </li>
+          <li>
+            <button type="button" class="btn btn-outline-secondary btn-block" onclick="window.location.href='login.html';">登出</button>
+          </li>
+
+        </ul>
+        <ul class="menu-list px-2">
+        </ul>
+      </div>
+      <div class="
+              col-xl-10 col-md-9 main">
+        <div class="row header py-2 align-items-center justify-content-between pr-3">
+          <div class="align-items-center d-flex">
+            <svg class="mx-3 switch-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30" height="30"
+              focusable="false">
+              <title>Menu</title>
+              <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"></path>
+            </svg>
+            <div class="header-img d-none d-md-block mr-2"></div>
+            <div class="header-img-xs d-block d-md-none"></div>
+            <span class="sub-title pr-2">模具保養管理系統</span>
+          </div>
+          <div class="user-info d-flex align-items-center">
+            <span class="px-1 d-md-inline d-none"><i class="fa-building far pr-1"></i>古德汽車模具供應</span>
+            <span class="px-1 d-md-inline d-none"><i class="far fa-user pr-1"></i>系統管理員</span>
+            <span class="px-1 d-md-inline d-none"><i class="fas fa-key pr-1"></i>admin000123</span>
+            <button type="button" class="btn btn-info mx-2  d-md-inline d-none">基本資料維護</button>
+            <button type="button" class="btn btn-outline-secondary mr-2  d-md-inline d-none" onclick="window.location.href='login.html';">登出</button>
+            <span><i class="far fa-question-circle text-right ml-2 info"></i></span>
+          </div>
+        </div>
+        <div class="function row d-block">
+          <div class="function-title d-flex align-items-center px-4 justify-content-between"><span><i class="fas fa-angle-right"></i>　FUN001
+              壓床生產實績</span> <span class="page-mode btn btn-info  btn-sm">編輯頁面</span></div>
+
+          <div class="px-md-5 px-3 pt-4 pb-2 function-content">
+            <form class="form mb-3 query-form">
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4">車型</label>
+                  <select id="inputState" class="form-control">
+                    <option selected>請選擇...</option>
+                    <option>C12</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4">部品名稱</label>
+                  <select id="inputState" class="form-control">
+                    <option selected>請選擇...</option>
+                    <option>ROOF</option>
+                  </select>
+                </div>
+
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputCity">生產日期</label>
+                  <input type="text" class="form-control" id="inputCity">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputState">工時</label>
+                  <input type="text" class="form-control" id="inputCity">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label for="inputPassword4">鈑修片數</label>
+                  <input type="text" class="form-control" id="inputPassword4">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="inputPassword4">報廢片數</label>
+                  <input type="text" class="form-control" id="inputPassword4">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="inputPassword4">生產片數</label>
+                  <input type="text" class="form-control" id="inputPassword4">
+                </div>
+              </div>
+            </form>
+            <div class="mx-auto row justify-content-center">
+              <button type="submit" class="btn btn-success mr-1">確定</button>
+              <button type="submit" class="btn btn-secondary mr-1" onclick=" history.back();">回上一頁</button>
+              <button type="submit" class="btn btn-danger">清空</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  <script src="js/index.js"></script>
+</body>
+
+</html>

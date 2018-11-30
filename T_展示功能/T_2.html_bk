@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>裕隆汽車模具保養管理系統</title>
+  <link rel='stylesheet' href='../css/fontawesome-min.css'>
+</head>
+<style>
+  .fixed_header{
+    width: 400px;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.fixed_header tbody{
+  display:block;
+  width: 100%;
+  overflow: auto;
+  height: 100px;
+}
+
+.fixed_header thead tr {
+   display: block;
+}
+
+.fixed_header thead {
+  background: black;
+  color:#fff;
+}
+
+.fixed_header th{
+  padding: 5px;
+  text-align: left;
+  width: 200px;
+}</style>
+
+<body>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="stylesheet" href="../css/jquery-ui.min.css">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/example.css">
+  <script src="../js/jquery-3.3.1.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/jquery-ui-1.12.1.js"></script>
+  <script src="../js/jQuery.resizableColumns.min.js"></script>
+  <div class="container-fluid page-container">
+    <div class="row h-100">
+      <div class="col-xl-2 col-lg-3 menu d-none">
+      </div>
+      <div class="main col-12">
+        <div class="row header py-2 align-items-center justify-content-between pr-3">
+        </div>
+        <div class="function row d-block">
+          <div class="function-title d-flex align-items-center px-4 justify-content-between" data-function-id="2-1"
+            data-page-mode="查詢頁面">
+          </div>
+
+          <div class="px-lg-5 px-3 pt-4 pb-2 function-content">
+            <div class="row align-items-center">
+              <div class="col-xl-3">
+                <div class="table-responsive  table-striped table-click table-unpage">
+                  <table class="table  bg-white" prevName="" prevCode="">
+                    <thead>
+                      <tr class="alert-info">
+                        <th scope="col">選單類型 <i class="fas fa-caret-down"></i></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>車型(產品型號)</td>
+                      </tr>
+                      <tr>
+                        <td>不良位置</td>
+                      </tr>
+                      <tr>
+                        <td>分類</td>
+                      </tr>
+                      <tr>
+                        <td>單位</td>
+                      </tr>
+                      <tr>
+                        <td>公司別</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+              <div class="col-xl-9 mt-4 mt-xl-0">
+                <div class="card">
+                  <div class="alert-info card-header font-weight-bold">主要區塊一</div>
+                  <form class="form mb-3 px-5 py-2 query-form" id="select-item-form">
+                    <div class="form-row-group d-md-flex">
+                      <label for="inputEmail3" class="col-form-label">確保具有至少六個字的空間</label>
+                      <div class="flex-grow-1">
+                        <input type="text" class="form-control" id="inputCity" value="至少六個字的">
+                      </div>
+                      <label for="inputPassword3" class="col-form-label">名稱</label>
+                      <div class="flex-grow-1">
+                        <input type="text" class="form-control" id="inputCity" value="車型樣式">
+                      </div>
+                    </div>
+                    <div class="form-row-group d-md-flex">
+                      <label for="inputEmail3" class="col-form-label">較短字數</label>
+                      <div class="flex-grow-1">
+                        <input type="text" class="form-control" id="inputCity" value="是">
+                      </div>
+                      <label for="inputPassword3" class="col-form-label">三個字</label>
+                      <div class="flex-grow-1">
+                        <input type="text" class="form-control" id="inputCity" value="三個字">
+                      </div>
+                    </div>
+                    <div class="form-row-group d-md-flex">
+                      <label for="inputEmail3" class="col-form-label">較短字數</label>
+                      <div class="flex-grow-1">
+                        <input type="text" class="form-control" id="inputCity" value="good-car-type">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="card px-5 py-3 mt-4">
+              <div class="form-row-group d-md-flex">
+                <label for="inputEmail3" class="col-form-label">較小的控制項尺寸</label>
+                <div class="flex-grow-1">
+                  <div class="input-group input-group-sm">
+                    <input class="form-control form-control-sm datepicker border-right-0">
+                    <div class="input-group-append btn-datepicker">
+                      <span class="input-group-text bg-white border-left-0 can-click"><i class="far fa-calendar-alt"></i></span>
+                    </div>
+                  </div>
+
+                </div>
+                <label for="inputPassword3" class="col-form-label">模具位置</label>
+                <div class="flex-grow-1">
+                  <div class="input-group input-group-sm">
+                    <input type="text" class="form-control form-control-sm" aria-label="Amount (to the nearest dollar)">
+                    <div class="input-group-append">
+                      <span class="input-group-text can-click" data-toggle="modal" data-target="#pop1"><i class="fas fa-bars"></i></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row-group d-md-flex">
+                <label for="inputEmail3" class="col-form-label">確保具有至少六個字的空間</label>
+                <div class="flex-grow-1">
+                  <div class="input-group mb-3">
+                    <input class="form-control datepicker border-right-0">
+                    <div class="input-group-append btn-datepicker">
+                      <span class="input-group-text bg-white border-left-0 can-click"><i class="far fa-calendar-alt"></i></span>
+                    </div>
+                  </div>
+
+                </div>
+                <label for="inputPassword3" class="col-form-label">模具位置</label>
+                <div class="flex-grow-1">
+                  <div class="input-group">
+                    <input type="text" class="form-control">
+                    <div class="input-group-append">
+                      <span class="input-group-text can-click" data-toggle="modal" data-target="#pop1"><i class="fas fa-bars"></i></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="text-right mt-3 mb-3">
+                <button type="button" class="btn btn-info">查詢</button>
+                <button type="button" class="btn btn-secondary">清空</button>
+              </div>
+            </div>
+            <hr>
+            <div class="mb-3 text-left">
+              <button type="button" class="btn btn-success mb-3" data-toggle="modal" data-target="#pop3"><i class="fas fa-plus mr-2"></i>新增表身</button>
+              <button type="button" class="btn btn-danger mb-3"><i class="far fa-trash-alt mr-2"></i>刪除表身</button>
+              <div class="table-responsive table-striped mb-2 w-100">
+                <table class="mx-auto table-sm bg-white table-bordered fixed_header  w-100" id="select-item-table"
+                  currentItemName="車型(產品型號)" currentItemCode="car-type">
+                  <thead>
+                    <tr class="alert-info">
+                      <th scope="col">
+                        <div class="td-actions d-flex align-items-center">
+                          <label class="list-item-checkbox check-all">
+                            <input type="checkbox" class="d-none">
+                            <div class="checkbox-display"></div>
+                          </label>
+                          <span class="edit-label">編輯</span></div>
+                      </th>
+                      <th scope="col">代號<i class="fas fa-caret-down"></i></th>
+                      <th scope="col">設定1<i class="fas fa-caret-down"></i></th>
+                      <th scope="col">設定2<i class="fas fa-caret-down"></i></th>
+                      <th scope="col">設定3<i class="fas fa-caret-down"></i></th>
+                      <th scope="col">設定4<i class="fas fa-caret-down"></i></th>
+                      <th scope="col">設定5<i class="fas fa-caret-down"></i></th>
+                      <th scope="col">設定6<i class="fas fa-caret-down"></i></th>
+                      <th scope="col">設定7<i class="fas fa-caret-down"></i></th>
+                      <th scope="col">設定8<i class="fas fa-caret-down"></i></th>
+                      <th scope="col">設定9<i class="fas fa-caret-down"></i></th>
+                      <th scope="col">設定10<i class="fas fa-caret-down"></i></th>
+                      <th scope="col">狀態<i class="fas fa-caret-down"></i></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="td-actions d-flex align-items-center"> <label class="list-item-checkbox ">
+                            <input type="checkbox" class="d-none">
+                            <div class="checkbox-display"></div>
+                          </label>
+                          <span class="btn btn-outline-secondary btn-sm rounded rounded-circle" data-toggle="modal"
+                            data-target="#pop2"><i class="far fa-edit"></i>
+                          </span></div>
+                      </td>
+                      <td>good-car-type</td>
+                      <td>車型(產品型號)S001</td>
+                      <td>車型(產品型號)工廠</td>
+                      <td>車型(產品型號)YLM</td>
+                      <td>廠級</td>
+                      <td>特色1</td>
+                      <td>特色2</td>
+                      <td>特色3</td>
+                      <td>特色4</td>
+                      <td>特色5</td>
+                      <td>特色6</td>
+                      <td>有效</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="td-actions d-flex align-items-center"> <label class="list-item-checkbox ">
+                            <input type="checkbox" class="d-none">
+                            <div class="checkbox-display"></div>
+                          </label>
+                          <span class="btn btn-outline-secondary btn-sm rounded rounded-circle" data-toggle="modal"
+                            data-target="#pop2"><i class="far fa-edit"></i>
+                          </span></div>
+                      </td>
+                      <td>good-car-type</td>
+                      <td>車型(產品型號)S002</td>
+                      <td>車型(產品型號)工廠</td>
+                      <td>車型(產品型號)YLM</td>
+                      <td>廠級</td>
+                      <td>特色1</td>
+                      <td>特色2</td>
+                      <td>特色3</td>
+                      <td>特色4</td>
+                      <td>特色5</td>
+                      <td>特色6</td>
+                      <td>有效</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="td-actions d-flex align-items-center"> <label class="list-item-checkbox ">
+                            <input type="checkbox" class="d-none">
+                            <div class="checkbox-display"></div>
+                          </label>
+                          <span class="btn btn-outline-secondary btn-sm rounded rounded-circle" data-toggle="modal"
+                            data-target="#pop2" data-backdrop="static"><i class="far fa-edit"></i>
+                          </span></div>
+                      </td>
+                      <td>good-car-type</td>
+                      <td>車型(產品型號)S003</td>
+                      <td>車型(產品型號)工廠</td>
+                      <td>車型(產品型號)YLM</td>
+                      <td>廠級</td>
+                      <td>特色1</td>
+                      <td>特色2</td>
+                      <td>特色3</td>
+                      <td>特色4</td>
+                      <td>特色5</td>
+                      <td>特色6</td>
+                      <td>有效</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="td-actions d-flex align-items-center"> <label class="list-item-checkbox ">
+                            <input type="checkbox" class="d-none">
+                            <div class="checkbox-display"></div>
+                          </label>
+                          <span class="btn btn-outline-secondary btn-sm rounded rounded-circle" data-toggle="modal"
+                            data-target="#pop2"><i class="far fa-edit"></i>
+                          </span></div>
+                      </td>
+                      <td>good-car-type</td>
+                      <td>車型(產品型號)S004</td>
+                      <td>車型(產品型號)工廠</td>
+                      <td>車型(產品型號)YLM</td>
+                      <td>廠級</td>
+                      <td>特色1</td>
+                      <td>特色2</td>
+                      <td>特色3</td>
+                      <td>特色4</td>
+                      <td>特色5</td>
+                      <td>特色6</td>
+                      <td>有效</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="td-actions d-flex align-items-center"> <label class="list-item-checkbox ">
+                            <input type="checkbox" class="d-none">
+                            <div class="checkbox-display"></div>
+                          </label>
+                          <span class="btn btn-outline-secondary btn-sm rounded rounded-circle" data-toggle="modal"
+                            data-target="#pop2"><i class="far fa-edit"></i>
+                          </span></div>
+                      </td>
+                      <td>good-car-type</td>
+                      <td>車型(產品型號)S005</td>
+                      <td>車型(產品型號)工廠</td>
+                      <td>車型(產品型號)YLM</td>
+                      <td>廠級</td>
+                      <td>特色1</td>
+                      <td>特色2</td>
+                      <td>特色3</td>
+                      <td>特色4</td>
+                      <td>特色5</td>
+                      <td>特色6</td>
+                      <td>有效</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="mx-auto row justify-content-between align-items-center">
+                <div class="col-xl-6 offset-xl-3">
+                  <nav aria-label="Page navigation">
+                    <ul class="pagination pagination-sm d-flex justify-content-center">
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                          <span aria-hidden="true">&laquo;</span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                          <span aria-hidden="true">&raquo;</span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+                <div class="col-xl-3 text-xl-right text-center"> <span class="">顯示 1 到 5 筆 / 共 332 筆</span></div>
+
+              </div>
+              <table class="fixed_header">
+                <thead>
+                  <tr>
+                    <th>Col 1</th>
+                    <th>Col 2</th>
+                    <th>Col 3</th>
+                    <th>Col 4</th>
+                    <th>Col 5</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>row 1-0</td>
+                    <td>row 1-1</td>
+                    <td>row 1-2</td>
+                    <td>row 1-3</td>
+                    <td>row 1-4</td>
+                  </tr>
+                  <tr>
+                    <td>row 2-0</td>
+                    <td>row 2-1</td>
+                    <td>row 2-2</td>
+                    <td>row 2-3</td>
+                    <td>row 2-4</td>
+                  </tr>
+                  <tr>
+                    <td>row 3-0</td>
+                    <td>row 3-1</td>
+                    <td>row 3-2</td>
+                    <td>row 3-3</td>
+                    <td>row 3-4</td>
+                  </tr>
+                  <tr>
+                    <td>row 4-0</td>
+                    <td>row 4-1</td>
+                    <td>row 4-2</td>
+                    <td>row 4-3</td>
+                    <td>row 4-4</td>
+                  </tr>
+                  <tr>
+                    <td>row 5-0</td>
+                    <td>row 5-1</td>
+                    <td>row 5-2</td>
+                    <td>row 5-3</td>
+                    <td>row 5-4</td>
+                  </tr>
+                  <tr>
+                    <td>row 6-0</td>
+                    <td>row 6-1</td>
+                    <td>row 6-2</td>
+                    <td>row 6-3</td>
+                    <td>row 6-4</td>
+                  </tr>
+                  <tr>
+                    <td>row 7-0</td>
+                    <td>row 7-1</td>
+                    <td>row 7-2</td>
+                    <td>row 7-3</td>
+                    <td>row 7-4</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="modal fade" id="pop1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                data-backdrop="static" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header alert-info">
+                      <h5 class="modal-title" id="exampleModalLongTitle">選擇</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="table-responsive  table-striped mb-2">
+                        <table class="table-sm table-bordered bg-white w-100 table-unpage">
+                          <thead>
+                            <tr class="alert-info">
+                              <th scope="col" class="width-100"></th>
+                              <th scope="col">模具位置 <i class="fas fa-caret-down"></i></th>
+                              <th scope="col">保母人員 <i class="fas fa-caret-down"></i></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="text-center"><button class="btn btn-primary" onclick="selected()">選擇</button></td>
+                              <td>T32</td>
+                              <td>前門</td>
+                            </tr>
+                            <tr>
+                              <td class="text-center"><button class="btn btn-primary" onclick="selected()">選擇</button></td>
+                              <td>T32</td>
+                              <td>前門</td>
+                            </tr>
+                            <tr>
+                              <td class="text-center"><button class="btn btn-primary" onclick="selected()">選擇</button></td>
+                              <td>T32</td>
+                              <td>前門</td>
+                            </tr>
+                            <tr>
+                              <td class="text-center"><button class="btn btn-primary" onclick="selected()">選擇</button></td>
+                              <td>T32</td>
+                              <td>前門</td>
+                            </tr>
+                            <tr>
+                              <td class="text-center"><button class="btn btn-primary" onclick="selected()">選擇</button></td>
+                              <td>T32</td>
+                              <td>前門</td>
+                            </tr>
+                            <tr>
+                              <td class="text-center"><button class="btn btn-primary" onclick="selected()">選擇</button></td>
+                              <td>T32</td>
+                              <td>前門</td>
+                            </tr>
+                            <tr>
+                              <td class="text-center"><button class="btn btn-primary" onclick="selected()">選擇</button></td>
+                              <td>T32</td>
+                              <td>前門</td>
+                            </tr>
+                            <tr>
+                              <td class="text-center"><button class="btn btn-primary" onclick="selected()">選擇</button></td>
+                              <td>T32</td>
+                              <td>前門</td>
+                            </tr>
+                            <tr>
+                              <td class="text-center"><button class="btn btn-primary" onclick="selected()">選擇</button></td>
+                              <td>T32</td>
+                              <td>前門</td>
+                            </tr>
+                            <tr>
+                              <td class="text-center"><button class="btn btn-primary" onclick="selected()">選擇</button></td>
+                              <td>T32</td>
+                              <td>前門</td>
+                            </tr>
+                            <tr>
+                              <td class="text-center"><button class="btn btn-primary" onclick="selected()">選擇</button></td>
+                              <td>T32</td>
+                              <td>前門</td>
+                            </tr>
+                            <tr>
+                              <td class="text-center"><button class="btn btn-primary" onclick="selected()">選擇</button></td>
+                              <td>T32</td>
+                              <td>前門</td>
+                            </tr>
+                            <tr>
+                              <td class="text-center"><button class="btn btn-primary" onclick="selected()">選擇</button></td>
+                              <td>T32</td>
+                              <td>前門</td>
+                            </tr>
+                            <tr>
+                              <td class="text-center"><button class="btn btn-primary" onclick="selected()">選擇</button></td>
+                              <td>T32</td>
+                              <td>前門</td>
+                            </tr>
+                            <tr>
+                              <td class="text-center"><button class="btn btn-primary" onclick="selected()">選擇</button></td>
+                              <td>T32</td>
+                              <td>前門</td>
+                            </tr>
+                            <tr>
+                              <td class="text-center"><button class="btn btn-primary" onclick="selected()">選擇</button></td>
+                              <td>T32</td>
+                              <td>前門</td>
+                            </tr>
+                            <tr>
+                              <td class="text-center"><button class="btn btn-primary" onclick="selected()">選擇</button></td>
+                              <td>T32</td>
+                              <td>前門</td>
+                            </tr>
+                            <tr>
+                              <td class="text-center"><button class="btn btn-primary" onclick="selected()">選擇</button></td>
+                              <td>T32</td>
+                              <td>前門</td>
+                            </tr>
+                            <tr>
+                              <td class="text-center"><button class="btn btn-primary" onclick="selected()">選擇</button></td>
+                              <td>T32</td>
+                              <td>前門</td>
+                            </tr>
+                            <tr>
+                              <td class="text-center"><button class="btn btn-primary" onclick="selected()">選擇</button></td>
+                              <td>T32</td>
+                              <td>前門</td>
+                            </tr>
+                            <tr>
+                              <td class="text-center"><button class="btn btn-primary" onclick="selected()">選擇</button></td>
+                              <td>T32</td>
+                              <td>前門</td>
+                            </tr>
+                            <tr>
+                              <td class="text-center"><button class="btn btn-primary" onclick="selected()">選擇</button></td>
+                              <td>T32</td>
+                              <td>前門</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="text-right mb-3">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">離開</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" data-backdrop="static" id="pop2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header alert-info">
+                      <h5 class="modal-title" id="exampleModalLongTitle">編輯</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form class="form mb-3 px-5 py-2 query-form" id="select-item-form">
+                        <div class="form-row-group d-md-flex">
+                          <label for="inputEmail3" class="col-form-label">確保具有至少六個字的空間</label>
+                          <div class="flex-grow-1">
+                            <input type="text" class="form-control" id="inputCity" value="至少六個字的">
+                          </div>
+                          <label for="inputPassword3" class="col-form-label">名稱</label>
+                          <div class="flex-grow-1">
+                            <input type="text" class="form-control" id="inputCity" value="車型樣式">
+                          </div>
+                        </div>
+                        <div class="form-row-group d-md-flex">
+                          <label for="inputEmail3" class="col-form-label">較短字數</label>
+                          <div class="flex-grow-1">
+                            <input type="text" class="form-control" id="inputCity" value="是">
+                          </div>
+                          <label for="inputPassword3" class="col-form-label">三個字</label>
+                          <div class="flex-grow-1">
+                            <input type="text" class="form-control" id="inputCity" value="三個字">
+                          </div>
+                        </div>
+                        <div class="form-row-group d-md-flex">
+                          <label for="inputEmail3" class="col-form-label">較短字數</label>
+                          <div class="flex-grow-1">
+                            <input type="text" class="form-control" id="inputCity" value="good-car-type">
+                          </div>
+                        </div>
+                        <div class="mx-auto row justify-content-end mt-3">
+                          <button type="submit" class="btn btn-success mr-1">確定</button>
+                          <button type="submit" class="btn btn-danger">清空</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="pop3" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header alert-info">
+                      <h5 class="modal-title" id="exampleModalLongTitle">新增</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form class="form mb-3 px-5 py-2 query-form" id="select-item-form">
+                        <div class="form-row-group d-md-flex">
+                          <label for="inputEmail3" class="col-form-label">確保具有至少六個字的空間</label>
+                          <div class="flex-grow-1">
+                            <input type="text" class="form-control" id="inputCity" value="至少六個字的">
+                          </div>
+                          <label for="inputPassword3" class="col-form-label">名稱</label>
+                          <div class="flex-grow-1">
+                            <input type="text" class="form-control" id="inputCity" value="車型樣式">
+                          </div>
+                        </div>
+                        <div class="form-row-group d-md-flex">
+                          <label for="inputEmail3" class="col-form-label">較短字數</label>
+                          <div class="flex-grow-1">
+                            <input type="text" class="form-control" id="inputCity" value="是">
+                          </div>
+                          <label for="inputPassword3" class="col-form-label">三個字</label>
+                          <div class="flex-grow-1">
+                            <input type="text" class="form-control" id="inputCity" value="三個字">
+                          </div>
+                        </div>
+                        <div class="form-row-group d-md-flex">
+                          <label for="inputEmail3" class="col-form-label">較短字數</label>
+                          <div class="flex-grow-1">
+                            <input type="text" class="form-control" id="inputCity" value="good-car-type">
+                          </div>
+                        </div>
+                        <div class="mx-auto row justify-content-end mt-3">
+                          <button type="submit" class="btn btn-success mr-1">確定</button>
+                          <button type="submit" class="btn btn-danger">清空</button>
+                        </div>
+                      </form>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../js/index.js"></script>
+  <script>
+    var currentSource;
+    function selected() {
+      $('#pop1').modal('hide');
+      $(currentSource).val('T32');
+    }
+    $('#pop1').on('show.bs.modal', function (e) {
+      currentSource =
+        $(e.relatedTarget).parent().parent().find('input');
+      //$('#pop1').resizable();
+    })
+  </script>
+  <script>
+    $(document).ready(function () {
+      $('#select-item-table').resizableColumns();
+    });
+  </script>
+
+</body>
+
+</html>

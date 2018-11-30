@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>裕隆汽車模具保養管理系統</title>
+  <link rel='stylesheet' href='../css/fontawesome-min.css'>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="stylesheet" href="../css/jquery-ui.min.css">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <script src="../js/jquery-3.3.1.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/jquery-ui-1.12.1.js"></script>
+  <div class="container-fluid page-container">
+    <div class="row h-100">
+      <div class="col-xl-2 col-lg-3 menu d-none">
+      </div>
+      <div class="main col-12">
+        <div class="row header py-2 align-items-center justify-content-between pr-3">
+        </div>
+        <div class="function row d-block">
+          <div class="function-title d-flex align-items-center px-4 justify-content-between" data-function-id="2-5"
+            data-page-mode="新增頁面">
+          </div>
+
+          <div class="px-lg-5 px-3 pt-4 pb-2 function-content">
+            <form class="form mb-3 query-form">
+              <div class="form-group row align-items-center">
+                <label for="inputPassword3" class="col-sm-1 col-form-label">公司</label>
+                <div class="col-sm-5">
+                  <select class="form-control">
+                    <option>請選擇</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row align-items-center">
+                <label for="inputPassword3" class="col-sm-1 col-form-label">部品名稱</label>
+                <div class="col-sm-5">
+                  <select class="form-control">
+                    <option>請選擇</option>
+                  </select>
+                </div>
+                <label for="inputPassword3" class="col-sm-1 col-form-label">部品件號</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" id="inputCity">
+                </div>
+              </div>
+              <div class="form-group row align-items-center">
+                <label for="inputPassword3" class="col-sm-1 col-form-label">保養天數</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control text-right" id="inputCity">
+                </div>
+                <label for="inputPassword3" class="col-sm-1 col-form-label">生產LOT片數</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control text-right" id="inputCity">
+                </div>
+              </div>
+              <div class="form-group row align-items-center">
+                <label for="inputPassword3" class="col-sm-1 col-form-label">保養基礎數量</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control text-right" id="inputCity">
+                </div>
+                <label for="inputPassword3" class="col-sm-1 col-form-label">模具DPU</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control text-right" id="inputCity">
+                </div>
+              </div>
+              <div class="form-group row align-items-center">
+                <label for="inputPassword3" class="col-sm-1 col-form-label">模具DPU(後三次平均)</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control text-right" id="inputCity">
+                </div>
+                <label for="inputPassword3" class="col-sm-1 col-form-label">LOT最小保養頻率倍數</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control text-right" id="inputCity">
+                </div>
+              </div>
+              <div class="form-group row align-items-center">
+                <label for="inputPassword3" class="col-sm-1 col-form-label">調整記錄</label>
+                <div class="col-sm-11">
+                  <select multiple class="form-control" id="exampleFormControlSelect2">
+                    <option>時間：2017/12/12 16:30:21　職稱：維修師　姓名：吳小明　調整內容：車門歪斜修正</option>
+                    <option>時間：2017/12/12 16:30:21　職稱：維修師　姓名：吳小明　調整內容：車門歪斜修正</option>
+                    <option>時間：2017/12/12 16:30:21　職稱：維修師　姓名：吳小明　調整內容：車門歪斜修正</option>
+                    <option>時間：2017/12/12 16:30:21　職稱：維修師　姓名：吳小明　調整內容：車門歪斜修正</option>
+                    <option>時間：2017/12/12 16:30:21　職稱：維修師　姓名：吳小明　調整內容：車門歪斜修正</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row align-items-center">
+                <label for="inputPassword3" class="col-sm-1 col-form-label">點位圖片</label>
+                <div class="col-sm-5">
+                  <input type="file" class="form-control-file mb-3" id="img-upload">
+                  <img id="img-upload-show" src="../img/img_placeholder.svg" width="300px">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-lg-12">
+                  <label for="inputCity">可用車型</label>
+                  <div class="d-flex mt-2">
+                    <div class="flex-grow-1">
+                      <div class="table-responsive  table-striped table-select">
+                        <table class="table  bg-white">
+                          <thead>
+                            <tr>
+                              <th scope="col"> <label class="list-item-checkbox check-all">
+                                  <input type="checkbox" class="d-none">
+                                  <div class="checkbox-display"></div>
+                                </label></th>
+                              <th scope="col">可用車型 <i class="fas fa-caret-down"></i></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <label class="list-item-checkbox">
+                                  <input type="checkbox" class="d-none">
+                                  <div class="checkbox-display"></div>
+                                </label>
+                              </td>
+                              <td>T30</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <label class="list-item-checkbox">
+                                  <input type="checkbox" class="d-none">
+                                  <div class="checkbox-display"></div>
+                                </label>
+                              </td>
+                              <td>T31</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <label class="list-item-checkbox">
+                                  <input type="checkbox" class="d-none">
+                                  <div class="checkbox-display"></div>
+                                </label>
+                              </td>
+                              <td>T32</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <label class="list-item-checkbox">
+                                  <input type="checkbox" class="d-none">
+                                  <div class="checkbox-display"></div>
+                                </label>
+                              </td>
+                              <td>T33</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <label class="list-item-checkbox">
+                                  <input type="checkbox" class="d-none">
+                                  <div class="checkbox-display"></div>
+                                </label>
+                              </td>
+                              <td>T34</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="btn-group-vertical px-3">
+                      <button class="btn d-block btn-success"><i class="fas fa-arrow-right mr-2"></i>加入</button><br>
+                      <button class="btn d-block btn-danger"><i class="fas fa-arrow-left mr-2"></i>移除</button>
+                    </div>
+
+                    <div class="flex-grow-1">
+                      <div class="table-responsive  table-striped table-select">
+                        <table class="table  bg-white">
+                          <thead>
+                            <tr>
+                              <th scope="col"> <label class="list-item-checkbox check-all">
+                                  <input type="checkbox" class="d-none">
+                                  <div class="checkbox-display"></div>
+                                </label></th>
+                              <th scope="col">部品使用車型 <i class="fas fa-caret-down"></i></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <label class="list-item-checkbox">
+                                  <input type="checkbox" class="d-none">
+                                  <div class="checkbox-display"></div>
+                                </label>
+                              </td>
+                              <td>T35</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <label class="list-item-checkbox">
+                                  <input type="checkbox" class="d-none">
+                                  <div class="checkbox-display"></div>
+                                </label>
+                              </td>
+                              <td>T36</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <div class="mx-auto row justify-content-end mb-3">
+              <button type="submit" class="btn btn-success mr-1">確定</button>
+              <button type="submit" class="btn btn-secondary mr-1" onclick=" history.back();">回上一頁</button>
+              <button type="submit" class="btn btn-danger">清空</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../js/index.js"></script>
+  <script>
+    $("#img-upload").change(function () {
+      if (this.files) {
+        var file = this.files[0];
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function (e) {
+          $("#img-upload-show").attr("src", this.result);
+        };
+      }
+      else {
+        $("#img-upload-show").attr("src", "../img/img_placeholder.svg");
+      }
+    });
+
+  </script>
+</body>
+
+</html>

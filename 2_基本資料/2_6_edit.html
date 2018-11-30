@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>裕隆汽車模具保養管理系統</title>
+  <link rel='stylesheet' href='../css/fontawesome-min.css'>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="stylesheet" href="../css/jquery-ui.min.css">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <script src="../js/jquery-3.3.1.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/jquery-ui-1.12.1.js"></script>
+  <div class="container-fluid page-container">
+    <div class="row h-100">
+      <div class="col-xl-2 col-lg-3 menu d-none">
+      </div>
+      <div class="main col-12">
+        <div class="row header py-2 align-items-center justify-content-between pr-3">
+        </div>
+        <div class="function row d-block">
+          <div class="function-title d-flex align-items-center px-4 justify-content-between" data-function-id="2-6"
+            data-page-mode="編輯頁面">
+          </div>
+          <div class="px-lg-5 px-3 pt-4 pb-2 function-content">
+            <div class="card bg-transparent mb-4">
+              <div class="card-header alert-info">
+                保養計畫
+              </div>
+              <form class="form mb-3 query-form mx-4">
+                <div class="form-group row align-items-center mt-4">
+                  <label for="inputPassword3" class="col-sm-1 col-form-label">公司別</label>
+                  <div class="col-sm-5">
+                    <select class="form-control">
+                      <option>請選擇</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group row align-items-center">
+                  <label for="inputPassword3" class="col-sm-1 col-form-label">廠別</label>
+                  <div class="col-sm-5">
+                    <select class="form-control">
+                      <option>請選擇</option>
+                    </select>
+                  </div>
+                  <label for="inputPassword3" class="col-sm-1 col-form-label">場別</label>
+                  <div class="col-sm-5">
+                    <select class="form-control">
+                      <option>請選擇</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group row align-items-center">
+                  <label for="inputEmail3" class="col-sm-1 col-form-label">計畫名稱</label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control" id="inputCity">
+                  </div>
+                  <label for="inputEmail3" class="col-sm-1 col-form-label">計畫說明</label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control" id="inputCity">
+                  </div>
+                </div>
+                <div class="form-group row align-items-center">
+                  <label for="inputPassword3" class="col-sm-1 col-form-label">車型</label>
+                  <div class="col-sm-5">
+                    <select class="form-control">
+                      <option>請選擇</option>
+                    </select>
+                  </div>
+                  <label for="inputPassword3" class="col-sm-1 col-form-label">保養條件</label>
+                  <div class="col-xl-3 col-sm-4 d-flex align-items-center">
+                    <label class="list-item-checkbox ml-0">
+                      <input type="checkbox" class="d-none" checked>
+                      <div class="checkbox-display"></div>
+                    </label> <span>DPU</span>
+                    <label class="list-item-checkbox">
+                      <input type="checkbox" class="d-none">
+                      <div class="checkbox-display"></div>
+                    </label><span>計時</span>
+                    <label class="list-item-checkbox">
+                      <input type="checkbox" class="d-none">
+                      <div class="checkbox-display "></div>
+                    </label>
+                    <span class="">計量</span>
+                  </div>
+                </div>
+                <div class="form-group row align-items-center">
+                  <label for="inputPassword3" class="col-sm-1 col-form-label">部品名稱</label>
+                  <div class="col-sm-5">
+                    <select class="form-control">
+                      <option>請選擇</option>
+                    </select>
+                  </div>
+                  <label for="inputPassword3" class="col-sm-1 col-form-label">部品編號</label>
+                  <div class="col-sm-5">
+                    <select class="form-control">
+                      <option>請選擇</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group row align-items-center">
+                  <label for="inputEmail3" class="col-sm-1 col-form-label">計時</label>
+                  <div class="col-sm-5 d-flex align-items-center">
+                    <input type="text" class="form-control" id="inputCity"><span class="ml-3">天</span>
+                  </div>
+                  <label for="inputPassword3" class="col-sm-1 col-form-label">計量</label>
+                  <div class="col-sm-5 d-flex align-items-center">
+                    <input type="text" class="form-control" id="inputCity"><span class="ml-3">片</span>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="card bg-transparent mb-4">
+              <div class="card-header alert-info">
+                保養計劃工程項目
+              </div>
+              <form class="form mb-3 query-form mx-4">
+                <div class="form-group row align-items-center mt-4">
+                  <label for="inputPassword3" class="col-sm-1 col-form-label">工程名</label>
+                  <div class="col-sm-5">
+                    <select class="form-control">
+                      <option>請選擇</option>
+                    </select>
+                  </div>
+                  <label for="inputPassword3" class="col-sm-1 col-form-label">前次保養日期</label>
+                  <div class="col-sm-5">
+                    <input type="date" class="form-control" id="inputCity">
+                  </div>
+                </div>
+                <div class="form-group row align-items-center">
+                  <label for="inputPassword3" class="col-sm-1 col-form-label">前次保養片數</label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control" id="inputCity">
+                  </div>
+                </div>
+              </form>
+              <div class="mb-3 text-right">
+                <div class="mx-4">
+                  <button type="submit" class="btn btn-success mr-1 mb-3" onclick=" window.location.href='2_6_add.html';"><i
+                      class="fas fa-plus mr-2"></i>新增</button>
+                  <button type="button" class="btn btn btn-info mb-3" data-toggle="modal" data-target="#pop1"><i class="far fa-copy mr-2"></i>複製新增</button>
+                  <button type="button" class="btn btn btn-dark mb-3"><i class="far fa-edit mr-2"></i>編輯</button>
+                </div>
+                <div class="tab-content mx-4" id="pills-tabContent">
+                  <div class="table-responsive  table-striped mb-2">
+                    <table class="table  bg-white">
+                      <thead>
+                        <tr>
+                          <th scope="col">工程名 <i class="fas fa-caret-down"></i></th>
+                          <th scope="col">模具位置 <i class="fas fa-caret-down"></i></th>
+                          <th scope="col">保母人員 <i class="fas fa-caret-down"></i></th>
+                          <th scope="col">前次保養日期 <i class="fas fa-caret-down"></i></th>
+                          <th scope="col" class="text-right">前次保養片數 <i class="fas fa-caret-down"></i></th>
+                          <th scope="col">備註說明 <i class="fas fa-caret-down"></i></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>PB</td>
+                          <td>A01</td>
+                          <td>吳小民</td>
+                          <td>2018/11/13</td>
+                          <td class="text-right">180</td>
+                          <td>注意公差部份</td>
+                        </tr>
+                        <tr>
+                          <td>PB</td>
+                          <td>A01</td>
+                          <td>吳小民</td>
+                          <td>2018/11/13</td>
+                          <td class="text-right">180</td>
+                          <td>注意公差部份</td>
+                        </tr>
+                        <tr>
+                          <td>PB</td>
+                          <td>A01</td>
+                          <td>吳小民</td>
+                          <td>2018/11/13</td>
+                          <td class="text-right">180</td>
+                          <td>注意公差部份</td>
+                        </tr>
+                        <tr>
+                          <td>PB</td>
+                          <td>A01</td>
+                          <td>吳小民</td>
+                          <td>2018/11/13</td>
+                          <td class="text-right">180</td>
+                          <td>注意公差部份</td>
+                        </tr>
+                        <tr>
+                          <td>PB</td>
+                          <td>A01</td>
+                          <td>吳小民</td>
+                          <td>2018/11/13</td>
+                          <td class="text-right">180</td>
+                          <td>注意公差部份</td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="row justify-content-between align-items-center mx-4">
+                  <div class="col-xl-6 offset-xl-3">
+                    <nav aria-label="Page navigation">
+                      <ul class="pagination d-flex justify-content-center">
+                        <li class="page-item">
+                          <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                          </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                          <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <div class="col-xl-3 text-xl-right text-center"> <span class="">顯示 1 到 5 筆 / 共 2468 筆</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="card bg-transparent mb-4">
+              <div class="card-header alert-info">
+                工程保養細項
+              </div>
+              <form class="form mb-3 query-form mx-4">
+                <div class="form-group row align-items-center mt-4">
+                  <label for="inputPassword3" class="col-sm-1 col-form-label">分類</label>
+                  <div class="col-sm-5">
+                    <select class="form-control">
+                      <option>請選擇</option>
+                    </select>
+                  </div>
+                  <label for="inputPassword3" class="col-sm-1 col-form-label">點檢位置</label>
+                  <div class="col-sm-5">
+                    <select class="form-control">
+                      <option>請選擇</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group row align-items-center">
+                  <label for="inputPassword3" class="col-sm-1 col-form-label">次項目</label>
+                  <div class="col-sm-5">
+                    <select class="form-control">
+                      <option>請選擇</option>
+                    </select>
+                  </div>
+                  <label for="inputPassword3" class="col-sm-1 col-form-label">度量名稱</label>
+                  <div class="col-sm-5">
+                    <select class="form-control">
+                      <option>請選擇</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group row align-items-center">
+                  <label for="inputPassword3" class="col-sm-1 col-form-label">計算式</label>
+                  <div class="col-sm-5">
+                    <select class="form-control">
+                      <option>請選擇</option>
+                    </select>
+                  </div>
+                  <label for="inputPassword3" class="col-sm-1 col-form-label">度量名稱</label>
+                  <div class="col-sm-5 d-inline-flex align-items-center radio-text">
+                    <div class="custom-control custom-radio mr-2">
+                      <input type="radio" class="custom-control-input" id="customControlValidation1" name="radio-stacked"
+                        value="a">
+                      <label class="custom-control-label" for="customControlValidation1">量化</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                      <input type="radio" class="custom-control-input" id="customControlValidation2" name="radio-stacked"
+                        value="b">
+                      <label class="custom-control-label" for="customControlValidation2">非量化</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group row align-items-center">
+                  <label for="inputPassword3" class="col-sm-1 col-form-label">目標1</label>
+                  <div class="col-sm-5">
+                    <input class="form-control" type="text">
+                  </div>
+                  <label for="inputPassword3" class="col-sm-1 col-form-label">目標2</label>
+                  <div class="col-sm-5">
+                    <input class="form-control" type="text">
+                  </div>
+                </div>
+              </form>
+              <div class="mb-3">
+                <div class="mx-4 text-right">
+                  <button type="submit" class="btn btn-success mr-1 mb-3" onclick=" window.location.href='2_6_add.html';"><i
+                      class="fas fa-plus mr-2"></i>新增</button>
+                  <button type="button" class="btn btn btn-info mb-3" data-toggle="modal" data-target="#pop2"><i class="far fa-copy mr-2"></i>複製新增</button>
+                  <button type="button" class="btn btn btn-dark mb-3"><i class="far fa-edit mr-2"></i>編輯</button>
+                </div>
+                <div class="tab-content mx-4" id="pills-tabContent">
+                  <div class="table-responsive  table-striped mb-2">
+                    <table class="table  bg-white">
+                      <thead>
+                        <tr>
+                          <th scope="col">主項目 <i class="fas fa-caret-down"></i></th>
+                          <th scope="col">分類 <i class="fas fa-caret-down"></i></th>
+                          <th scope="col" class="text-center">分類圖</th>
+                          <th scope="col">點檢位置 <i class="fas fa-caret-down"></i></th>
+                          <th scope="col" class="text-right">No <i class="fas fa-caret-down"></i></th>
+                          <th scope="col">次項目 <i class="fas fa-caret-down"></i></th>
+                          <th scope="col">度量名稱 <i class="fas fa-caret-down"></i></th>
+                          <th scope="col" class="text-right">目標1 <i class="fas fa-caret-down"></i></th>
+                          <th scope="col" class="text-right">目標2 <i class="fas fa-caret-down"></i></th>
+                          <th scope="col" class="text-center">計算式 <i class="fas fa-caret-down"></i></th>
+                          <th scope="col">單位 <i class="fas fa-caret-down"></i></th>
+                          <th scope="col">保養工時 <i class="fas fa-caret-down"></i></th>
+                          <th scope="col" class="text-center">細部圖 <i class="fas fa-caret-down"></i></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>整體</td>
+                          <td class="text-center"><i class="far fa-file-image font-size-big can-click text-info"
+                              data-toggle="modal" data-target="#exampleModalCenter"></i></td>
+                          <td>導版</td>
+                          <td class="text-right">1.1</td>
+                          <td>刮傷</td>
+                          <td>寬度</td>
+                          <td class="text-right">1.0</td>
+                          <td>　</td>
+                          <td class="text-center">
+                            <</td> <td>mm
+                          </td>
+                          <td>2.0min</td>
+                          <td class="text-center"><i class="far fa-file-image font-size-big can-click text-info"
+                              data-toggle="modal" data-target="#exampleModalCenter_category"></i></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td class="text-center"></td>
+                          <td></td>
+                          <td class="text-right">1.2</td>
+                          <td>黃油模</td>
+                          <td>塗佈面積</td>
+                          <td class="text-right">95</td>
+                          <td class="text-right">100</td>
+                          <td class="text-center">
+                            ~</td>
+                          <td>mm
+                          </td>
+                          <td>2.0min</td>
+                          <td class="text-center"><i class="far fa-file-image font-size-big can-click text-info text-danger"
+                              data-toggle="modal" data-target="#exampleModalCenter_noimg"></i></td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>其他</td>
+                          <td class="text-center"><i class="far fa-file-image font-size-big can-click text-info text-danger"
+                              data-toggle="modal" data-target="#exampleModalCenter_category_noimg"></i></td>
+                          <td>導版</td>
+                          <td class="text-right">2.1</td>
+                          <td>刮傷</td>
+                          <td>寬度</td>
+                          <td class="text-right">1.0</td>
+                          <td>　</td>
+                          <td class="text-center">
+                            <</td> <td>mm
+                          </td>
+                          <td>2.0min</td>
+                          <td class="text-center"><i class="far fa-file-image font-size-big can-click text-info"
+                              data-toggle="modal" data-target="#exampleModalCenter"></i></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td class="text-center"></td>
+                          <td></td>
+                          <td class="text-right">2.2</td>
+                          <td>黃油模</td>
+                          <td>塗佈面積</td>
+                          <td class="text-right">95</td>
+                          <td class="text-right">100</td>
+                          <td class="text-center">
+                            ~</td>
+                          <td>mm
+                          </td>
+                          <td>2.0min</td>
+                          <td class="text-center"><i class="far fa-file-image font-size-big can-click text-info"
+                              data-toggle="modal" data-target="#exampleModalCenter"></i></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td class="text-center"></td>
+                          <td></td>
+                          <td class="text-right">2.3</td>
+                          <td>黃油模</td>
+                          <td>塗佈面積</td>
+                          <td class="text-right">95</td>
+                          <td class="text-right">100</td>
+                          <td class="text-center">
+                            ~</td>
+                          <td>mm
+                          </td>
+                          <td>2.0min</td>
+                          <td class="text-center"><i class="far fa-file-image font-size-big can-click text-info"
+                              data-toggle="modal" data-target="#exampleModalCenter"></i></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="row justify-content-between align-items-center mx-4">
+                  <div class="col-xl-6 offset-xl-3">
+                    <nav aria-label="Page navigation">
+                      <ul class="pagination d-flex justify-content-center">
+                        <li class="page-item">
+                          <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                          </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                          <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <div class="col-xl-3 text-xl-right text-center"> <span class="">顯示 1 到 5 筆 / 共 2468 筆</span></div>
+                  <div class="modal fade" id="exampleModalCenter_category" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLongTitle">分類圖</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body mx-auto text-center">
+                          <img id="img-upload-show-1" class="img-fluid" src="../img/2_5_img1.JPG" alt="Responsive image">
+                          <input type="file" id="img-upload-1" class="form-control-file mb-3 mt-3 img-upload" for="#img-upload-show-1">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal fade" id="exampleModalCenter_category_noimg" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLongTitle">分類圖</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body text-center mx-auto">
+                          <img id="img-upload-show-2" class="img-fluid" src="../img/img_placeholder.svg" alt="Responsive image">
+                          <input type="file" id="img-upload-2" class="form-control-file mb-3 mt-3 img-upload" for="#img-upload-show-2">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLongTitle">細部圖</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body mx-auto text-center">
+                          <img id="img-upload-show-3" class="img-fluid" src="../img/2_5_img1.JPG" alt="Responsive image">
+                          <input type="file" id="img-upload-3" class="form-control-file mb-3 mt-3 img-upload" for="#img-upload-show-3">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal fade" id="exampleModalCenter_noimg" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLongTitle">細部圖</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body text-center mx-auto">
+                          <img id="img-upload-show-4" class="img-fluid" src="../img/img_placeholder.svg" width="300px">
+                          <input type="file" id="img-upload-4" class="form-control-file mb-3 mt-3 img-upload" for="#img-upload-show-4">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal fade" id="pop1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLongTitle">複製工程項目</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <form class="form mb-3 query-form">
+                            <div class="form-group row align-items-center">
+                              <label for="inputEmail3" class="col-sm-4 col-form-label">車型</label>
+                              <div class="col-sm-8">
+                                <select class="form-control">
+                                  <option>請選擇</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="form-group row align-items-center">
+                              <label for="inputEmail3" class="col-sm-4 col-form-label">部品名稱</label>
+                              <div class="col-sm-8">
+                                <select class="form-control">
+                                  <option>請選擇</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="form-group row align-items-center">
+                              <label for="inputEmail3" class="col-sm-4 col-form-label">部品編號</label>
+                              <div class="col-sm-8">
+                                <select class="form-control">
+                                  <option>請選擇</option>
+                                </select>
+                              </div>
+                            </div>
+                          </form>
+                          <div class="text-right mb-3">
+                            <button type="button" class="btn btn-info">確定</button>
+                            <button type="button" class="btn btn-secondary">清空</button>
+                          </div>
+                          <div class="table-responsive  table-striped mb-2">
+                            <table class="table  bg-white">
+                              <thead>
+                                <tr>
+                                  <th scope="col"> <label class="list-item-checkbox check-all">
+                                      <input type="checkbox" class="d-none">
+                                      <div class="checkbox-display"></div>
+                                    </label></th>
+                                  <th scope="col">保養計劃 <i class="fas fa-caret-down"></i></th>
+                                  <th scope="col">車型 <i class="fas fa-caret-down"></i></th>
+                                  <th scope="col">部品名稱 <i class="fas fa-caret-down"></i></th>
+                                  <th scope="col">部品編號 <i class="fas fa-caret-down"></i></th>
+                                  <th scope="col">工程名 <i class="fas fa-caret-down"></i></th>
+                                  <th scope="col">模具位置 <i class="fas fa-caret-down"></i></th>
+                                  <th scope="col">保母人員 <i class="fas fa-caret-down"></i></th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td> <label class="list-item-checkbox check-all">
+                                      <input type="checkbox" class="d-none">
+                                      <div class="checkbox-display"></div>
+                                    </label></td>
+                                  <td>車門半年保養</td>
+                                  <td>T32</td>
+                                  <td>前門</td>
+                                  <td>XXXXX-XXXX</td>
+                                  <td>PB</td>
+                                  <td>A01</td>
+                                  <td>吳小民</td>
+                                </tr>
+                                <tr>
+                                  <td> <label class="list-item-checkbox check-all">
+                                      <input type="checkbox" class="d-none">
+                                      <div class="checkbox-display"></div>
+                                    </label></td>
+                                  <td>車門半年保養</td>
+                                  <td>T32</td>
+                                  <td>前門</td>
+                                  <td>XXXXX-XXXX</td>
+                                  <td>PB</td>
+                                  <td>A01</td>
+                                  <td>吳小民</td>
+                                </tr>
+                                <tr>
+                                  <td> <label class="list-item-checkbox check-all">
+                                      <input type="checkbox" class="d-none">
+                                      <div class="checkbox-display"></div>
+                                    </label></td>
+                                  <td>車門半年保養</td>
+                                  <td>T32</td>
+                                  <td>前門</td>
+                                  <td>XXXXX-XXXX</td>
+                                  <td>PB</td>
+                                  <td>A01</td>
+                                  <td>吳小民</td>
+                                </tr>
+                                <tr>
+                                  <td> <label class="list-item-checkbox check-all">
+                                      <input type="checkbox" class="d-none">
+                                      <div class="checkbox-display"></div>
+                                    </label></td>
+                                  <td>車門半年保養</td>
+                                  <td>T32</td>
+                                  <td>前門</td>
+                                  <td>XXXXX-XXXX</td>
+                                  <td>PB</td>
+                                  <td>A01</td>
+                                  <td>吳小民</td>
+                                </tr>
+                                <tr>
+                                  <td> <label class="list-item-checkbox check-all">
+                                      <input type="checkbox" class="d-none">
+                                      <div class="checkbox-display"></div>
+                                    </label></td>
+                                  <td>車門半年保養</td>
+                                  <td>T32</td>
+                                  <td>前門</td>
+                                  <td>XXXXX-XXXX</td>
+                                  <td>PB</td>
+                                  <td>A01</td>
+                                  <td>吳小民</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="submit" class="btn btn-success mr-1">新增</button>
+                            <button type="submit" class="btn btn-danger">清空</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal fade" id="pop2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLongTitle">複製保養項目</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <form class="form mb-3 query-form">
+                            <div class="form-group row align-items-center">
+                              <label for="inputEmail3" class="col-sm-4 col-form-label">車型</label>
+                              <div class="col-sm-8">
+                                <select class="form-control">
+                                  <option>請選擇</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="form-group row align-items-center">
+                              <label for="inputEmail3" class="col-sm-4 col-form-label">部品名稱</label>
+                              <div class="col-sm-8">
+                                <select class="form-control">
+                                  <option>請選擇</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="form-group row align-items-center">
+                              <label for="inputEmail3" class="col-sm-4 col-form-label">部品編號</label>
+                              <div class="col-sm-8">
+                                <select class="form-control">
+                                  <option>請選擇</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="form-group row align-items-center">
+                              <label for="inputEmail3" class="col-sm-4 col-form-label">工程名</label>
+                              <div class="col-sm-8">
+                                <select class="form-control">
+                                  <option>請選擇</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="form-group row align-items-center">
+                              <label for="inputEmail3" class="col-sm-4 col-form-label">點檢位置</label>
+                              <div class="col-sm-8">
+                                <select class="form-control">
+                                  <option>請選擇</option>
+                                </select>
+                              </div>
+                            </div>
+                          </form>
+                          <div class="text-right mb-3">
+                            <button type="button" class="btn btn-info">確定</button>
+                            <button type="button" class="btn btn-secondary">清空</button>
+                          </div>
+                          <div class="table-responsive  table-striped mb-2">
+                            <table class="table  bg-white">
+                              <thead>
+                                <tr>
+                                  <th scope="col"> <label class="list-item-checkbox check-all">
+                                      <input type="checkbox" class="d-none">
+                                      <div class="checkbox-display"></div>
+                                    </label></th>
+                                  <th scope="col">保養計劃 <i class="fas fa-caret-down"></i></th>
+                                  <th scope="col">車型 <i class="fas fa-caret-down"></i></th>
+                                  <th scope="col">部品名稱 <i class="fas fa-caret-down"></i></th>
+                                  <th scope="col">部品編號 <i class="fas fa-caret-down"></i></th>
+                                  <th scope="col">工程名 <i class="fas fa-caret-down"></i></th>
+                                  <th scope="col">點檢位置 <i class="fas fa-caret-down"></i></th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td> <label class="list-item-checkbox check-all">
+                                      <input type="checkbox" class="d-none">
+                                      <div class="checkbox-display"></div>
+                                    </label></td>
+                                  <td>車門半年保養</td>
+                                  <td>T32</td>
+                                  <td>前門</td>
+                                  <td>XXXXX-XXXX</td>
+                                  <td>PB</td>
+                                  <td>工程名</td>
+                                </tr>
+                                <tr>
+                                  <td> <label class="list-item-checkbox check-all">
+                                      <input type="checkbox" class="d-none">
+                                      <div class="checkbox-display"></div>
+                                    </label></td>
+                                  <td>車門半年保養</td>
+                                  <td>T32</td>
+                                  <td>前門</td>
+                                  <td>XXXXX-XXXX</td>
+                                  <td>PB</td>
+                                  <td>工程名</td>
+                                </tr>
+                                <tr>
+                                  <td> <label class="list-item-checkbox check-all">
+                                      <input type="checkbox" class="d-none">
+                                      <div class="checkbox-display"></div>
+                                    </label></td>
+                                  <td>車門半年保養</td>
+                                  <td>T32</td>
+                                  <td>前門</td>
+                                  <td>XXXXX-XXXX</td>
+                                  <td>PB</td>
+                                  <td>工程名</td>
+                                </tr>
+                                <tr>
+                                  <td> <label class="list-item-checkbox check-all">
+                                      <input type="checkbox" class="d-none">
+                                      <div class="checkbox-display"></div>
+                                    </label></td>
+                                  <td>車門半年保養</td>
+                                  <td>T32</td>
+                                  <td>前門</td>
+                                  <td>XXXXX-XXXX</td>
+                                  <td>PB</td>
+                                  <td>工程名</td>
+                                </tr>
+                                <tr>
+                                  <td> <label class="list-item-checkbox check-all">
+                                      <input type="checkbox" class="d-none">
+                                      <div class="checkbox-display"></div>
+                                    </label></td>
+                                  <td>車門半年保養</td>
+                                  <td>T32</td>
+                                  <td>前門</td>
+                                  <td>XXXXX-XXXX</td>
+                                  <td>PB</td>
+                                  <td>工程名</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="submit" class="btn btn-success mr-1">新增</button>
+                            <button type="submit" class="btn btn-danger">清空</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../js/index.js"></script>
+  <script>
+    $(".img-upload").change(function (ge) {
+      if (this.files) {
+        var file = this.files[0];
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function (e) {
+          $($(ge.currentTarget).attr('for')).attr("src", this.result);
+        };
+      }
+      else {
+        $($(ge.currentTarget).attr('for')).attr("src", "../img/img_placeholder.svg");
+      }
+    });
+
+  </script>
+</body>
+
+</html>

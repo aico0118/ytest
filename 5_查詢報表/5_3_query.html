@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>裕隆汽車模具保養管理系統</title>
+  <link rel='stylesheet' href='../css/fontawesome-min.css'>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="stylesheet" href="../css/jquery-ui.min.css">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <script src="../js/jquery-3.3.1.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/jquery-ui-1.12.1.js"></script>
+  <div class="container-fluid page-container">
+    <div class="row h-100">
+      <div class="col-xl-2 col-lg-3 menu d-none">
+      </div>
+      <div class="main col-12">
+        <div class="row header py-2 align-items-center justify-content-between pr-3">
+        </div>
+        <div class="function row d-block">
+          <div class="function-title d-flex align-items-center px-4 justify-content-between" data-function-id="5-3"
+            data-page-mode="查詢頁面">
+          </div>
+
+          <div class="px-lg-5 px-3 pt-4 pb-2 function-content">
+            <div class="alert alert-info mb-4" role="alert">
+              整體DPU(模具)排名
+            </div>
+            <form class="form mb-3 query-form mx-4" id="select-item-form">
+              <div class="form-group row align-items-center">
+                <label for="inputEmail3" class="col-sm-1 col-form-label">排名類型</label>
+                <div class="col-sm-5">
+                  <select class="form-control">
+                    <option>請選擇</option>
+                    <option>週排名</option>
+                    <option>月排名</option>
+                    <option>季排名</option>
+                    <option>年排名</option>
+                    <option>全排名</option>
+                  </select>
+                </div>
+                <label for="inputPassword3" class="col-sm-1 col-form-label">DPU(模具)排序</label>
+                <div class="col-sm-5">
+                  <select class="form-control">
+                    <option>請選擇</option>
+                    <option>由高至低</option>
+                    <option>由低至高</option>
+                  </select>
+                </div>
+              </div>
+              <div class="text-right">
+                <button type="button" class="btn btn-info">確定</button>
+                <button type="button" class="btn btn-secondary">清空</button>
+              </div>
+            </form>
+            <ul class="nav nav-pills mb-3 mx-4" id="pills-tab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-1" role="tab"
+                  aria-controls="pills-home" aria-selected="true">A級</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-2" role="tab" aria-controls="pills-profile"
+                  aria-selected="false">B級</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-3" role="tab" aria-controls="pills-contact"
+                  aria-selected="false">C級</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-4" role="tab" aria-controls="pills-contact"
+                  aria-selected="false">D級</a>
+              </li>
+            </ul>
+            <div class="tab-content mx-4" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-1" role="tabpanel" aria-labelledby="pills-home-tab">
+                <div class="table-responsive  table-striped mb-2 table-unpage">
+                  <table class="table  bg-white" id="select-item-table" currentItemName="車型(產品型號)" currentItemCode="car-type">
+                    <thead>
+                      <tr>
+                        <th scope="col" class="text-right"> 名次 <i class="fas fa-caret-down"></i></th>
+                        <th scope="col">優先度<i class="fas fa-caret-down"></i></th>
+                        <th scope="col">車型<i class="fas fa-caret-down"></i></th>
+                        <th scope="col">部品名稱<i class="fas fa-caret-down"></i></th>
+                        <th scope="col">部品件號<i class="fas fa-caret-down"></i></th>
+                        <th scope="col">產能<i class="fas fa-caret-down"></i></th>
+                        <th scope="col">生產片數<i class="fas fa-caret-down"></i></th>
+                        <th scope="col">缺點數(模具)<i class="fas fa-caret-down"></i></th>
+                        <th scope="col">DPU(模具)<i class="fas fa-caret-down"></i></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row" class="text-right">1</th>
+                        <td class="alert-danger">A級</td>
+                        <td>AER-200</td>
+                        <td>電池</td>
+                        <td>EL-02</td>
+                        <td>高</td>
+                        <td>999</td>
+                        <td>15</td>
+                        <td>PE</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="text-right">2</th>
+                        <td class="alert-danger">A級</td>
+                        <td>AER-200</td>
+                        <td>電池</td>
+                        <td>EL-02</td>
+                        <td>高</td>
+                        <td>999</td>
+                        <td>15</td>
+                        <td>PE</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="text-right">3</th>
+                        <td class="alert-danger">A級</td>
+                        <td>AER-200</td>
+                        <td>電池</td>
+                        <td>EL-02</td>
+                        <td>高</td>
+                        <td>999</td>
+                        <td>15</td>
+                        <td>PE</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="text-right">4</th>
+                        <td class="alert-danger">A級</td>
+                        <td>AER-200</td>
+                        <td>電池</td>
+                        <td>EL-02</td>
+                        <td>高</td>
+                        <td>999</td>
+                        <td>15</td>
+                        <td>PE</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="text-right">5</th>
+                        <td class="alert-danger">A級</td>
+                        <td>AER-200</td>
+                        <td>電池</td>
+                        <td>EL-02</td>
+                        <td>高</td>
+                        <td>999</td>
+                        <td>15</td>
+                        <td>PE</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-home-tab">
+                <div class="table-responsive  table-striped mb-2 table-unpage">
+                  <table class="table  bg-white" id="select-item-table" currentItemName="車型(產品型號)" currentItemCode="car-type">
+                    <thead>
+                      <tr>
+                        <th scope="col" class="text-right"> 名次 <i class="fas fa-caret-down"></i></th>
+                        <th scope="col">優先度<i class="fas fa-caret-down"></i></th>
+                        <th scope="col">車型<i class="fas fa-caret-down"></i></th>
+                        <th scope="col">部品名稱<i class="fas fa-caret-down"></i></th>
+                        <th scope="col">部品件號<i class="fas fa-caret-down"></i></th>
+                        <th scope="col">產能<i class="fas fa-caret-down"></i></th>
+                        <th scope="col">生產片數<i class="fas fa-caret-down"></i></th>
+                        <th scope="col">缺點數(模具)<i class="fas fa-caret-down"></i></th>
+                        <th scope="col">DPU(模具)<i class="fas fa-caret-down"></i></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row" class="text-right">1</th>
+                        <td class="alert-warning">B級</td>
+                        <td>AER-200</td>
+                        <td>電池</td>
+                        <td>EL-02</td>
+                        <td>高</td>
+                        <td>999</td>
+                        <td>15</td>
+                        <td>PE</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="text-right">2</th>
+                        <td class="alert-warning">B級</td>
+                        <td>AER-200</td>
+                        <td>電池</td>
+                        <td>EL-02</td>
+                        <td>高</td>
+                        <td>999</td>
+                        <td>15</td>
+                        <td>PE</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="text-right">3</th>
+                        <td class="alert-warning">B級</td>
+                        <td>AER-200</td>
+                        <td>電池</td>
+                        <td>EL-02</td>
+                        <td>高</td>
+                        <td>999</td>
+                        <td>15</td>
+                        <td>PE</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="text-right">4</th>
+                        <td class="alert-warning">B級</td>
+                        <td>AER-200</td>
+                        <td>電池</td>
+                        <td>EL-02</td>
+                        <td>高</td>
+                        <td>999</td>
+                        <td>15</td>
+                        <td>PE</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="text-right">5</th>
+                        <td class="alert-warning">B級</td>
+                        <td>AER-200</td>
+                        <td>電池</td>
+                        <td>EL-02</td>
+                        <td>高</td>
+                        <td>999</td>
+                        <td>15</td>
+                        <td>PE</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="pills-3" role="tabpanel" aria-labelledby="pills-home-tab">
+                <div class="table-responsive  table-striped mb-2 table-unpage">
+                  <table class="table  bg-white" id="select-item-table" currentItemName="車型(產品型號)" currentItemCode="car-type">
+                    <thead>
+                      <tr>
+                        <th scope="col" class="text-right"> 名次 <i class="fas fa-caret-down"></i></th>
+                        <th scope="col">優先度<i class="fas fa-caret-down"></i></th>
+                        <th scope="col">車型<i class="fas fa-caret-down"></i></th>
+                        <th scope="col">部品名稱<i class="fas fa-caret-down"></i></th>
+                        <th scope="col">部品件號<i class="fas fa-caret-down"></i></th>
+                        <th scope="col">產能<i class="fas fa-caret-down"></i></th>
+                        <th scope="col">生產片數<i class="fas fa-caret-down"></i></th>
+                        <th scope="col">缺點數(模具)<i class="fas fa-caret-down"></i></th>
+                        <th scope="col">DPU(模具)<i class="fas fa-caret-down"></i></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row" class="text-right">1</th>
+                        <td class="alert-info">C級</td>
+                        <td>AER-200</td>
+                        <td>電池</td>
+                        <td>EL-02</td>
+                        <td>低</td>
+                        <td>999</td>
+                        <td>15</td>
+                        <td>PE</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="text-right">2</th>
+                        <td class="alert-info">C級</td>
+                        <td>AER-200</td>
+                        <td>電池</td>
+                        <td>EL-02</td>
+                        <td>低</td>
+                        <td>999</td>
+                        <td>15</td>
+                        <td>PE</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="text-right">3</th>
+                        <td class="alert-info">C級</td>
+                        <td>AER-200</td>
+                        <td>電池</td>
+                        <td>EL-02</td>
+                        <td>低</td>
+                        <td>999</td>
+                        <td>15</td>
+                        <td>PE</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="text-right">4</th>
+                        <td class="alert-info">C級</td>
+                        <td>AER-200</td>
+                        <td>電池</td>
+                        <td>EL-02</td>
+                        <td>低</td>
+                        <td>999</td>
+                        <td>15</td>
+                        <td>PE</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="text-right">5</th>
+                        <td class="alert-info">C級</td>
+                        <td>AER-200</td>
+                        <td>電池</td>
+                        <td>EL-02</td>
+                        <td>低</td>
+                        <td>999</td>
+                        <td>15</td>
+                        <td>PE</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="pills-4" role="tabpanel" aria-labelledby="pills-home-tab">
+                <div class="table-responsive  table-striped mb-2 table-unpage">
+                  <table class="table  bg-white" id="select-item-table" currentItemName="車型(產品型號)" currentItemCode="car-type">
+                    <thead>
+                      <tr>
+                        <th scope="col" class="text-right"> 名次 <i class="fas fa-caret-down"></i></th>
+                        <th scope="col">優先度<i class="fas fa-caret-down"></i></th>
+                        <th scope="col">車型<i class="fas fa-caret-down"></i></th>
+                        <th scope="col">部品名稱<i class="fas fa-caret-down"></i></th>
+                        <th scope="col">部品件號<i class="fas fa-caret-down"></i></th>
+                        <th scope="col">產能<i class="fas fa-caret-down"></i></th>
+                        <th scope="col">生產片數<i class="fas fa-caret-down"></i></th>
+                        <th scope="col">缺點數(模具)<i class="fas fa-caret-down"></i></th>
+                        <th scope="col">DPU(模具)<i class="fas fa-caret-down"></i></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row" class="text-right">1</th>
+                        <td class="alert-success">D級</td>
+                        <td>AER-200</td>
+                        <td>電池</td>
+                        <td>EL-02</td>
+                        <td>低</td>
+                        <td>999</td>
+                        <td>15</td>
+                        <td>PE</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="text-right">2</th>
+                        <td class="alert-success">D級</td>
+                        <td>AER-200</td>
+                        <td>電池</td>
+                        <td>EL-02</td>
+                        <td>低</td>
+                        <td>999</td>
+                        <td>15</td>
+                        <td>PE</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="text-right">3</th>
+                        <td class="alert-success">D級</td>
+                        <td>AER-200</td>
+                        <td>電池</td>
+                        <td>EL-02</td>
+                        <td>低</td>
+                        <td>999</td>
+                        <td>15</td>
+                        <td>PE</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="text-right">4</th>
+                        <td class="alert-success">D級</td>
+                        <td>AER-200</td>
+                        <td>電池</td>
+                        <td>EL-02</td>
+                        <td>低</td>
+                        <td>999</td>
+                        <td>15</td>
+                        <td>PE</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="text-right">5</th>
+                        <td class="alert-success">D級</td>
+                        <td>AER-200</td>
+                        <td>電池</td>
+                        <td>EL-02</td>
+                        <td>低</td>
+                        <td>999</td>
+                        <td>15</td>
+                        <td>PE</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <hr class="mt-5">
+            <div class="alert alert-info mt-5 mb-4 mt-5" role="alert">
+              個別DPU(模具)排名-全排名(由高至低)
+            </div>
+            <form class="form mb-3 query-form mx-4" id="select-item-form">
+              <div class="form-group row align-items-center">
+                <label for="inputEmail3" class="col-sm-1 col-form-label">車型</label>
+                <div class="col-sm-5">
+                  <select class="form-control">
+                    <option>請選擇</option>
+                  </select>
+                </div>
+                <label for="inputPassword3" class="col-sm-1 col-form-label">部品名稱</label>
+                <div class="col-sm-5">
+                  <select class="form-control">
+                    <option>請選擇</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row align-items-center">
+                <label for="inputEmail3" class="col-sm-1 col-form-label">部品件號</label>
+                <div class="col-sm-5">
+                  <select class="form-control">
+                    <option>請選擇</option>
+                  </select>
+                </div>
+              </div>
+              <div class="text-right">
+                <button type="button" class="btn btn-info">確定</button>
+                <button type="button" class="btn btn-secondary">清空</button>
+              </div>
+            </form>
+            <div class="tab-content mx-4" id="pills-tabContent">
+              <div class="table-responsive table-striped mb-2 table-unpage mb-3">
+                <table class="table bg-white" id="select-item-table" currentItemName="車型(產品型號)" currentItemCode="car-type">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="text-right"> 名次 <i class="fas fa-caret-down"></i></th>
+                      <th scope="col">產能<i class="fas fa-caret-down"></i></th>
+                      <th scope="col">生產片數<i class="fas fa-caret-down"></i></th>
+                      <th scope="col">優先度<i class="fas fa-caret-down"></i></th>
+                      <th scope="col">缺點數(模具)<i class="fas fa-caret-down"></i></th>
+                      <th scope="col">DPU(模具)<i class="fas fa-caret-down"></i></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row" class="text-right">1</th>
+                      <td>高</td>
+                      <td>999</td>
+                      <td class="alert-danger">A級</td>
+                      <td>15</td>
+                      <td>PE</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="text-right">2</th>
+                      <td>高</td>
+                      <td>999</td>
+                      <td class="alert-danger">A級</td>
+                      <td>15</td>
+                      <td>PE</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="text-right">3</th>
+                      <td>高</td>
+                      <td>999</td>
+                      <td class="alert-danger">A級</td>
+                      <td>15</td>
+                      <td>PE</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="text-right">4</th>
+                      <td>高</td>
+                      <td>999</td>
+                      <td class="alert-danger">A級</td>
+                      <td>15</td>
+                      <td>PE</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="text-right">5</th>
+                      <td>高</td>
+                      <td>999</td>
+                      <td class="alert-danger">A級</td>
+                      <td>15</td>
+                      <td>PE</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../js/index.js"></script>
+</body>
+
+</html>

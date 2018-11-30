@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>裕隆汽車模具保養管理系統</title>
+  <link rel='stylesheet' href='../css/fontawesome-min.css'>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="stylesheet" href="../css/jquery-ui.min.css">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="../css/kendo.bootstrap-v4.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/example.css">
+  <script src="../js/jquery-3.3.1.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/kendo.web.min.js"></script>
+  <script src="../js/jquery-ui-1.12.1.js"></script>
+</head>
+
+<body>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <div class="container-fluid page-container">
+    <div class="row h-100">
+      <div class="col-xl-2 col-lg-3 menu d-none">
+      </div>
+      <div class="main col-12">
+        <div class="row header py-2 align-items-center justify-content-between pr-3">
+        </div>
+        <div class="function row d-block">
+          <div class="function-title d-flex align-items-center px-4 justify-content-between" data-function-id="4-1"
+            data-page-mode="歷史資料明細">
+          </div>
+          <div class="px-lg-5 px-3 pt-4 pb-2 function-content">
+            <div class="accordion" id="accordionExample">
+              <div class="card">
+                <div class="card-header alert-info collapsed can-click" id="headingOne" data-toggle="collapse"
+                  data-target="#collapseOne" aria-expanded="false" aria-controls="collapseTwo">
+                  <div class="align-items-center d-flex justify-content-between">
+                    <span>明細資料</span>
+                    <i class="pl-2 fas fa-angle-down"></i></div>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample1">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-12">
+                        <form class="form mb-3 query-form" id="select-item-form">
+                          <div class="form-group row align-items-center">
+                            <label for="inputEmail3" class="col-sm-1 col-form-label">車型</label>
+                            <div class="col-sm-5">
+                              <select id="inputState" class="form-control" disabled>
+                                <option selected>T32</option>
+                              </select>
+                            </div>
+                            <label for="inputEmail3" class="col-sm-1 col-form-label">部品名稱</label>
+                            <div class="col-sm-5">
+                              <select id="inputState" class="form-control  text-right" disabled>
+                                <option selected>前門</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="form-group row align-items-center">
+                            <label for="inputEmail3" class="col-sm-1 col-form-label">部品件號</label>
+                            <div class="col-sm-5">
+                              <input type="text" class="form-control" value="XXX-XXX" id="inputCity" disabled>
+                            </div>
+                            <label for="inputPassword3" class="col-sm-1 col-form-label">生產日期</label>
+                            <div class="col-sm-5">
+                              <input type="date" class="form-control" id="inputCity" value="2018-10-11" disabled>
+                            </div>
+                          </div>
+                          <div class="form-group row align-items-center today">
+                            <label for="inputEmail3" class="col-sm-1 col-form-label">生產片數</label>
+                            <div class="col-sm-5 text-right">
+                              <input type="text" class="form-control  text-right" id="inputCity" value="100" disabled>
+                            </div>
+                            <label for="inputEmail3" class="col-sm-1 col-form-label">鈑修片數</label>
+                            <div class="col-sm-5 text-right">
+                              <input type="text" class="form-control  text-right" id="inputCity" value="0" disabled>
+                            </div>
+                          </div>
+                          <div class="form-group row align-items-center today">
+                            <label for="inputEmail3" class="col-sm-1 col-form-label">目標片數</label>
+                            <div class="col-sm-5">
+                              <input type="text" class="form-control  text-right" id="inputCity" value="100" disabled>
+                            </div>
+                            <label for="inputEmail3" class="col-sm-1 col-form-label">報廢片數</label>
+                            <div class="col-sm-5">
+                              <input type="text" class="form-control  text-right" id="inputCity" value="0" disabled>
+                            </div>
+                          </div>
+                          <div class="form-group row align-items-center">
+                            <label for="inputEmail3" class="col-sm-1 col-form-label">總工時</label>
+                            <div class="col-sm-5">
+                              <input type="text" class="form-control text-right" id="inputCity" value="100" disabled>
+                            </div>
+                            <label for="inputPassword3" class="col-sm-1 col-form-label">模具上線故障率</label>
+                            <div class="col-sm-5">
+                              <input type="text" class="form-control text-right" id="inputCity" value="10%" disabled>
+                            </div>
+                          </div>
+                          <div class="form-group row align-items-center">
+
+                            <label for="inputEmail3" class="col-sm-1 col-form-label">廠別</label>
+                            <div class="col-sm-5">
+                              <select id="inputState" class="form-control" disabled>
+                                <option selected>台中廠</option>
+                              </select>
+                            </div>
+                            <label for="inputEmail3" class="col-sm-1 col-form-label">場別</label>
+                            <div class="col-sm-5">
+                              <select id="inputState" class="form-control" disabled>
+                                <option selected>組裝場</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="form-group row align-items-center today">
+                            <label for="inputEmail3" class="col-sm-1 col-form-label">SPH</label>
+                            <div class="col-sm-5">
+                              <input type="text" class="form-control text-right" id="inputCity" value="0" disabled>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header alert-info collapsed can-click" id="headingTwo" data-toggle="collapse"
+                  data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  <div class="align-items-center d-flex justify-content-between">
+                    <span>細分工程設定</span>
+                    <i class="pl-2 fas fa-angle-down"></i></div>
+                </div>
+
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample2">
+                  <div class="card-body">
+                    <div class="table-responsive  table-striped mb-2">
+                      <table class="table-sm bg-white table-bordered w-100">
+                        <thead>
+                          <tr>
+                            <th scope="col">工程名 <i class="fas fa-caret-down"></i></th>
+                            <th class="text-right">生產片數 <i class="fas fa-caret-down"></i></th>
+                            <th class="text-right">模具上線故隌工時(分) <i class="fas fa-caret-down"></i></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>PB</td>
+                            <td class="text-right">1</td>
+                            <td class="text-right">2</td>
+                          </tr>
+                          <tr>
+                            <td>PC</td>
+                            <td class="text-right">1</td>
+                            <td class="text-right">2</td>
+                          </tr>
+                          <tr>
+                            <td>PD</td>
+                            <td class="text-right">1</td>
+                            <td class="text-right">2</td>
+                          </tr>
+                          <tr>
+                            <td>PD</td>
+                            <td class="text-right">1</td>
+                            <td class="text-right">2</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mx-auto mt-3 row justify-content-end mb-3">
+              <button type="submit" class="btn btn-secondary mr-1" onclick=" history.back();">回上一頁</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/index.js"></script>
+</body>
+
+</html>

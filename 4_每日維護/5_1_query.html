@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>裕隆汽車模具保養管理系統</title>
+  <link rel='stylesheet' href='../css/fontawesome-min.css'>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="stylesheet" href="../css/jquery-ui.min.css">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <script src="../js/jquery-3.3.1.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/jquery-ui-1.12.1.js"></script>
+  <div class="container-fluid page-container">
+    <div class="row h-100">
+      <div class="col-xl-2 col-lg-3 menu d-none">
+      </div>
+      <div class="main col-12">
+        <div class="row header py-2 align-items-center justify-content-between pr-3">
+        </div>
+        <div class="function row d-block">
+          <div class="function-title d-flex align-items-center px-4 justify-content-between" data-function-id="4-1"
+            data-page-mode="查詢頁面">
+          </div>
+
+          <div class="px-lg-5 px-3 pt-4 pb-2 function-content">
+            <div class="row align-items-center">
+              <div class="col-xl-8">
+                <form class="form mb-3 query-form" id="select-item-form">
+                  <div class="form-group row align-items-center">
+                    <label for="inputPassword3" class="col-sm-1 col-form-label">生產日期</label>
+                    <div class="col-sm-5">
+                      <input type="date" class="form-control" id="inputCity">
+                    </div>
+                    <label for="inputEmail3" class="col-sm-1 col-form-label"></label>
+                    <div class="col-sm-5 d-inline-flex align-items-center radio-text">
+                      <div class="custom-control custom-radio mr-2">
+                        <input type="radio" class="custom-control-input" id="customControlValidation1" name="radio-stacked"
+                          value="a">
+                        <label class="custom-control-label" for="customControlValidation1">當天</label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" id="customControlValidation2" name="radio-stacked"
+                          value="b">
+                        <label class="custom-control-label" for="customControlValidation2">歷史</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group row align-items-center">
+                    <label for="inputEmail3" class="col-sm-1 col-form-label">廠別</label>
+                    <div class="col-sm-5">
+                      <select id="inputState" class="form-control">
+                        <option selected>請選擇</option>
+                      </select>
+                    </div>
+                    <label for="inputEmail3" class="col-sm-1 col-form-label">場別</label>
+                    <div class="col-sm-5">
+                      <select id="inputState" class="form-control">
+                        <option selected>請選擇</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group row align-items-center">
+                    <label for="inputEmail3" class="col-sm-1 col-form-label">車型</label>
+                    <div class="col-sm-5">
+                      <select id="inputState" class="form-control">
+                        <option selected>請選擇</option>
+                      </select>
+                    </div>
+                    <label for="inputEmail3" class="col-sm-1 col-form-label">總工時</label>
+                    <div class="col-sm-5 text-right">
+                      <input type="text" class="form-control" id="inputCity">
+                    </div>
+                  </div>
+                  <div class="form-group row align-items-center">
+                    <label for="inputEmail3" class="col-sm-1 col-form-label">部品名稱</label>
+                    <div class="col-sm-5">
+                      <select id="inputState" class="form-control  text-right">
+                        <option selected>請選擇</option>
+                      </select>
+                    </div>
+                    <label for="inputEmail3" class="col-sm-1 col-form-label">生產片數</label>
+                    <div class="col-sm-5 text-right">
+                      <input type="text" class="form-control  text-right" id="inputCity">
+                    </div>
+                  </div>
+                  <div class="form-group row align-items-center">
+                    <label for="inputEmail3" class="col-sm-1 col-form-label">部品件號</label>
+                    <div class="col-sm-5">
+                      <input type="text" class="form-control" id="inputCity">
+                    </div>
+                    <label for="inputEmail3" class="col-sm-1 col-form-label">鈑修片數</label>
+                    <div class="col-sm-5 text-right">
+                      <input type="text" class="form-control  text-right" id="inputCity">
+                    </div>
+                  </div>
+                  <div class="form-group row align-items-center">
+                    <label for="inputEmail3" class="col-sm-1 col-form-label">日期(起)</label>
+                    <div class="col-sm-5">
+                      <input type="date" class="form-control" id="inputCity">
+                    </div>
+                    <label for="inputEmail3" class="col-sm-1 col-form-label">報廢片數</label>
+                    <div class="col-sm-5">
+                      <input type="text" class="form-control  text-right" id="inputCity">
+                    </div>
+                  </div>
+                  <div class="form-group row align-items-center">
+                    <label for="inputEmail3" class="col-sm-1 col-form-label">日期(迄)</label>
+                    <div class="col-sm-5">
+                      <input type="date" class="form-control" id="inputCity">
+                    </div>
+                    <label for="inputEmail3" class="col-sm-1 col-form-label">目標片數</label>
+                    <div class="col-sm-5">
+                      <input type="text" class="form-control  text-right" id="inputCity">
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="col-xl-4">
+                <div class="table-responsive  table-striped">
+                  <table class="table  bg-white" prevName="" prevCode="">
+                    <thead>
+                      <tr>
+                        <th scope="col">工程名 <i class="fas fa-caret-down"></i></th>
+                        <th scope="col">生產片數 <i class="fas fa-caret-down"></i></th>
+                        <th scope="col">模具上線故隌工時(分) <i class="fas fa-caret-down"></i></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>PB</td>
+                        <td> <input type="text" class="form-control  text-right" id="inputCity"></td>
+                        <td> <input type="text" class="form-control  text-right" id="inputCity"></td>
+                      </tr>
+                      <tr>
+                        <td>PC</td>
+                        <td> <input type="text" class="form-control  text-right" id="inputCity"></td>
+                        <td> <input type="text" class="form-control  text-right" id="inputCity"></td>
+                      </tr>
+                      <tr>
+                        <td>PD</td>
+                        <td> <input type="text" class="form-control  text-right" id="inputCity"></td>
+                        <td> <input type="text" class="form-control  text-right" id="inputCity"></td>
+                      </tr>
+                      <tr>
+                        <td>PD</td>
+                        <td> <input type="text" class="form-control  text-right" id="inputCity"></td>
+                        <td> <input type="text" class="form-control  text-right" id="inputCity"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+            </div>
+            <div class="d-flex justify-content-between">
+              <div>
+                <button class="btn btn-secondy"><i class="fas fa-search mr-2"></i>搜尋</button>
+              </div>
+              <div>
+                <button type="submit" class="btn btn-success mr-1 mb-3" onclick=" window.location.href='2_6_add.html';"><i
+                    class="fas fa-plus mr-2"></i>新增</button>
+                <button type="button" class="btn btn btn-dark mr-1 mb-3"><i class="far fa-edit mr-2"></i>編輯</button>
+                <button type="button" class="btn btn-danger mr-1 mb-3"><i class="far fa-trash-alt mr-2"></i>刪除</button>
+              </div>
+            </div>
+            <div class="table-responsive  table-striped mb-2">
+              <table class="table  bg-white" id="select-item-table" currentItemName="車型(產品型號)" currentItemCode="car-type">
+                <thead>
+                  <tr>
+                    <th scope="col">車型<i class="fas fa-caret-down"></i></th>
+                    <th scope="col">部品名稱<i class="fas fa-caret-down"></i></th>
+                    <th scope="col">部品件號<i class="fas fa-caret-down"></i></th>
+                    <th scope="col">日期<i class="fas fa-caret-down"></i></th>
+                    <th scope="col" class="text-right">生產片數<i class="fas fa-caret-down"></i></th>
+                    <th scope="col" class="text-right">鈑修片數<i class="fas fa-caret-down"></i></th>
+                    <th scope="col" class="text-right">報廢片數<i class="fas fa-caret-down"></i></th>
+                    <th scope="col" class="text-right">總工時<i class="fas fa-caret-down"></i></th>
+                    <th scope="col" class="text-right">SPH<i class="fas fa-caret-down"></i></th>
+                    <th scope="col" class="text-right">模具上線故障率<i class="fas fa-caret-down"></i></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">T32</th>
+                    <td>前門</td>
+                    <td>XXX-XXX</td>
+                    <td>2018/10/11</td>
+                    <td class="text-right">100</td>
+                    <td class="text-right">0</td>
+                    <td class="text-right">0</td>
+                    <td class="text-right">100</td>
+                    <td class="text-right">0</td>
+                    <td class="text-right">10%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">T32</th>
+                    <td>前門</td>
+                    <td>XXX-XXX</td>
+                    <td>2018/10/11</td>
+                    <td class="text-right">100</td>
+                    <td class="text-right">0</td>
+                    <td class="text-right">0</td>
+                    <td class="text-right">100</td>
+                    <td class="text-right">0</td>
+                    <td class="text-right">10%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">T32</th>
+                    <td>前門</td>
+                    <td>XXX-XXX</td>
+                    <td>2018/10/11</td>
+                    <td class="text-right">100</td>
+                    <td class="text-right">0</td>
+                    <td class="text-right">0</td>
+                    <td class="text-right">100</td>
+                    <td class="text-right">0</td>
+                    <td class="text-right">10%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">T32</th>
+                    <td>前門</td>
+                    <td>XXX-XXX</td>
+                    <td>2018/10/11</td>
+                    <td class="text-right">100</td>
+                    <td class="text-right">0</td>
+                    <td class="text-right">0</td>
+                    <td class="text-right">100</td>
+                    <td class="text-right">0</td>
+                    <td class="text-right">10%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">T32</th>
+                    <td>前門</td>
+                    <td>XXX-XXX</td>
+                    <td>2018/10/11</td>
+                    <td class="text-right">100</td>
+                    <td class="text-right">0</td>
+                    <td class="text-right">0</td>
+                    <td class="text-right">100</td>
+                    <td class="text-right">0</td>
+                    <td class="text-right">10%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="mx-auto row justify-content-between align-items-center">
+              <div class="col-xl-6 offset-xl-3">
+                <nav aria-label="Page navigation">
+                  <ul class="pagination d-flex justify-content-center">
+                    <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="col-xl-3 text-xl-right text-center"> <span class="">顯示 1 到 5 筆 / 共 332 筆</span></div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../js/index.js"></script>
+</body>
+
+</html>

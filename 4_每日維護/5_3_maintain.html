@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>裕隆汽車模具保養管理系統</title>
+  <link rel='stylesheet' href='../css/fontawesome-min.css'>
+  <link rel="stylesheet" href="../css/example.css">
+  <style>
+    .bg-custom {
+        background: rgba(0,0,0,.03);
+      }
+      .info-group {
+        display: flex;
+        border: 1px solid rgba(0,0,0,.5);
+        background: white;
+        border-radius: 3px;
+      }
+  
+      .info-group-prepend {
+        border-right: 1px solid rgba(0,0,0,.5);
+        background: #e9ecef;
+        padding: .3em;
+        white-space: nowrap;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+        text-align: center;
+      }
+      .info-group-text {
+        padding: .3em;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+      }
+  
+      .defective-names .defective-name:nth-child(odd) {
+        padding-right: .5rem;
+      }
+      .defective-names .defective-name:nth-child(even) {
+        padding-left: .5rem;
+      }
+      .defective-name {
+        display: flex;
+        flex: 0 0 50%;
+        position: relative;
+      }
+  
+      .defective-name div:first-child {
+        flex: 1 0 auto;
+      }
+      .defective-name div:last-child {
+        flex: 0 0 0px;
+      }
+      .defective-distribution > div {
+        flex: 0 0 20%;
+        font-family: monospace;
+      }
+  
+      .legend {
+        flex: 0 0 20%;
+        font-size: .9em;
+      }
+      .defective-amount {
+        font-family: monospace;
+        padding: .4em 1em;
+        border: 1px solid rgba(0,0,0,.5);
+        border-radius: 3px;
+        margin-left: 5px;
+      }
+      .defective-categories .legend {
+        flex: 0 0 50%;
+        position: relative;
+        padding: .4rem 1rem;
+        cursor: default;
+      }
+      .legend-tooltip {
+        position: absolute;
+        left: 95%;
+        top: 0;
+        z-index: 1;
+        border-radius: 3px;
+        background: white;
+        white-space: nowrap;
+        filter: drop-shadow(2px 4px 10px rgba(0,0,0,.5));
+      }
+      .legend-tooltip::before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-right: 10px solid #e9ecef;
+        display: inline-block;
+        position: absolute;
+        left: -10px;
+        top: 3px;
+      }
+  
+      .legend-tooltip > span {
+        white-space: nowrap;
+        padding: .2em .5em;
+        display: inline-block;
+        border-left: 1px solid rgba(0,0,0,.5);
+      }
+      .tooltip-label {
+        background: #e9ecef;
+      }
+      .legend-tooltip .tooltip-label:first-child {
+        border-left-width: 0;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+      }
+  
+      .legend::before {
+        content: '';
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        background: transparent;
+        border: 3px solid black;
+        margin-right: 2px;
+        vertical-align: middle;
+        margin-right: 5px;
+      }
+      .legend-border-red::before {
+        border-color: #d32f2f;
+      }
+      .legend-border-purple::before {
+        border-color: #7b1fa2;
+      }
+      .legend-border-blue::before {
+        border-color: #1976d2;
+      }
+      .legend-border-cyan::before {
+        border-color: #0097a7;
+      }
+      .legend-border-green::before {
+        border-color: #388e3c;
+      }
+      .legend-border-lime::before {
+        border-color: #afb42b;
+      }
+      .legend-border-yellow::before {
+        border-color: #fbc02d;
+      }
+      .legend-border-orange::before {
+        border-color: #f57c00;
+      }
+      .legend-border-black::before {
+        border-color: #000;
+      }
+      .legend-border-brown::before {
+        border-color: #5d4037;
+      }
+      .legend-bg-red::before {
+        background: #ff5252;
+      }
+      .legend-bg-purple::before {
+        background: #e040fb;
+      }
+      .legend-bg-blue::before {
+        background: #448aff;
+      }
+      .legend-bg-cyan::before {
+        background: #18ffff;
+      }
+      .legend-bg-green::before {
+        background: #69f0ae;
+      }
+      .legend-bg-lime::before {
+        background: #aeea00;
+      }
+      .legend-bg-yellow::before {
+        background: #ffff00;
+      }
+      .legend-bg-orange::before {
+        background: #ffab40;
+      }
+      .legend-bg-black::before {
+        background: #000;
+      }
+      .legend-bg-brown::before {
+        background: #a1887f;
+      }
+    </style>
+</head>
+
+<body>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="stylesheet" href="../css/jquery-ui.min.css">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <script src="../js/jquery-3.3.1.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/jquery-ui-1.12.1.js"></script>
+  <div class="container-fluid page-container">
+    <div class="row h-100">
+      <div class="col-xl-2 col-lg-3 menu d-none">
+      </div>
+      <div class="main col-12">
+        <div class="row header py-2 align-items-center justify-content-between pr-3">
+        </div>
+        <div class="function row d-block">
+          <div class="function-title d-flex align-items-center px-4 justify-content-between" data-function-id="4-3"
+            data-page-mode="查詢頁面">
+          </div>
+
+          <div class="px-lg-5 px-3 pt-4 pb-2 function-content" style="min-width: 768px;">
+            <div class="row input mb-5">
+              <div class="col">
+                <div class="border rounded">
+                  <div class="px-3 py-2 bg-custom rounded-top">基本資料</div>
+                  <div class="d-flex border-top">
+                    <div class="col py-2 text-center">車型</div>
+                    <div class="col py-2 text-left border-left">AER-200</div>
+                  </div>
+                  <div class="d-flex border-top">
+                    <div class="col py-2 text-center">部品名稱</div>
+                    <div class="col py-2 text-left border-left">電池</div>
+                  </div>
+                  <div class="d-flex border-top">
+                    <div class="col py-2 text-center">部品件號</div>
+                    <div class="col py-2 text-left border-left">EL-02</div>
+                  </div>
+                  <div class="d-flex border-top">
+                    <div class="col py-2 text-center">生產日期</div>
+                    <div class="col py-2 text-left border-left">2018/01/01</div>
+                  </div>
+                  <div class="d-flex border-top">
+                    <div class="col py-2 text-center">生產片數</div>
+                    <div class="col py-2 text-left border-left">10000</div>
+                  </div>
+                  <div class="d-flex border-top">
+                    <div class="col py-2 text-center">鈑修片數</div>
+                    <div class="col py-2 text-left border-left">300</div>
+                  </div>
+                  <div class="d-flex border-top">
+                    <div class="col py-2 text-center">鈑修人員</div>
+                    <div class="col py-2 text-left border-left">12345</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="border rounded d-flex flex-column">
+                  <div class="px-3 py-2 bg-custom rounded-top">品質資料顯示</div>
+                  <div class="d-flex no-gutters border-top">
+                    <div class="col-4 text-center py-2">點數(作業)</div>
+                    <div class="col-2 text-center px-1 py-2 border-left">10</div>
+                    <div class="col-4 text-center py-2 border-left">DPU(作業)</div>
+                    <div class="col-2 text-center px-1 py-2 border-left">10</div>
+                  </div>
+                  <div class="d-flex no-gutters border-top">
+                    <div class="col-4 text-center py-2">點數(原材)</div>
+                    <div class="col-2 text-center px-1 py-2 border-left">10</div>
+                    <div class="col-4 text-center py-2 border-left">DPU(原材)</div>
+                    <div class="col-2 text-center px-1 py-2 border-left">10</div>
+                  </div>
+                  <div class="d-flex no-gutters border-top">
+                    <div class="col-4 text-center py-2">點數(模具)</div>
+                    <div class="col-2 text-center px-1 py-2 border-left">10</div>
+                    <div class="col-4 text-center py-2 border-left">DPU(模具)</div>
+                    <div class="col-2 text-center px-1 py-2 border-left">10</div>
+                  </div>
+                  <div class="d-flex no-gutters border-top">
+                    <div class="col-4 text-center py-2">點數(其他)</div>
+                    <div class="col-2 text-center px-1 py-2 border-left">10</div>
+                    <div class="col-4 text-center py-2 border-left">DPU(其他)</div>
+                    <div class="col-2 text-center px-1 py-2 border-left">10</div>
+                  </div>
+                </div>
+                <div class="card px-5 py-3 mt-4">
+                  <div class="form-row-group d-md-flex">
+                    <label for="inputEmail3" class="col-form-label">鈑修人員</label>
+                    <div class="flex-grow-1">
+                      <div class="input-group input-group-sm">
+                        <input type="text" class="form-control form-control-sm" aria-label="Amount (to the nearest dollar)">
+                        <div class="input-group-append">
+                          <span class="input-group-text can-click" data-toggle="modal" data-target="#pop1">加入</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="border rounded">
+                  <div class="px-3 py-2 bg-custom border-bottom rounded-top">點位圖示說明</div>
+                  <div class="d-flex flex-wrap p-3">
+                    <div class="legend legend-border-red legend-bg-purple">棉絮</div>
+                    <div class="legend legend-border-purple legend-bg-blue">鐵屑</div>
+                    <div class="legend legend-border-blue legend-bg-cyan">破裂</div>
+                    <div class="legend legend-border-cyan legend-bg-green">生鏽</div>
+                    <div class="legend legend-border-green legend-bg-lime">膠粒</div>
+                    <div class="legend legend-border-lime legend-bg-yellow">異物</div>
+                    <div class="legend legend-border-yellow legend-bg-orange">變形</div>
+                    <div class="legend legend-border-orange legend-bg-black">皺</div>
+                    <div class="legend legend-border-black legend-bg-brown">星目</div>
+                    <div class="legend legend-border-brown legend-bg-red">碰撞</div>
+                    <div class="legend legend-border-red legend-bg-brown">粒點</div>
+                    <div class="legend legend-border-purple legend-bg-black">凹凸</div>
+                    <div class="legend legend-border-blue legend-bg-orange">毛頭</div>
+                    <div class="legend legend-border-cyan legend-bg-yellow">不順</div>
+                    <div class="legend legend-border-green legend-bg-red">刮傷</div>
+                    <div class="legend legend-border-lime legend-bg-green">緊縮</div>
+                    <div class="legend legend-border-yellow legend-bg-cyan">波浪</div>
+                    <div class="legend legend-border-orange legend-bg-blue">鋸齒</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-left">
+              <button type="button" class="btn btn-success mb-3 btn-input" data-toggle="modal" data-target="#pop3"><i
+                  class="fas fa-plus mr-2"></i>圖片點位輸入</button>
+              <button type="button" class="btn btn-info mb-3 btn-show-detail"><i class="fas fa-clipboard-list mr-2"></i>全部點位顯示&資料統計</button>
+            </div>
+            <div class="row input-block mb-3">
+              <div class="col-md-5">
+                <div class="border rounded">
+                  <div class="px-3 py-2 bg-custom border-bottom rounded-top">圖片點位輸入區</div>
+                  <img class="img-fluid" src="../img/door.png" alt="">
+                </div>
+              </div>
+              <div class="col-md-7">
+                <div class="border rounded">
+                  <div class="px-3 py-2 bg-custom border-bottom rounded-top">問題點選擇區</div>
+                  <form class="form mb-3 px-5 py-2 query-form" id="select-item-form">
+                    <div class="form-row-group d-md-flex">
+                      <label for="inputEmail3" class="col-form-label">工程名</label>
+                      <div class="flex-grow-1">
+                        <div class="d-flex align-items-center">
+                          <select class="form-control  form-control-sm">
+                            <option>PB</option>
+                          </select>
+                          <span　class="ml-3">分</span>
+                        </div>
+                      </div>
+                      <label for="inputEmail3" class="col-form-label">分類</label>
+                      <div class="flex-grow-1">
+                        <div class="input-group input-group-sm">
+                          <select class="form-control form-control-sm">
+                            <option>作業</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-row-group d-md-flex">
+                      <label for="inputEmail3" class="col-form-label">問題點</label>
+                      <div class="w-50">
+                        <select class="form-control form-control-sm">
+                          <option>波浪</option>
+                        </select>
+                      </div>
+                      <label for="inputEmail3" class="col-form-label">等級</label>
+                      <div class="w-50">
+                        <div class="input-group input-group-sm">
+                          <select class="form-control  form-control-sm">
+                            <option>V1</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-row-group d-md-flex">
+                      <label for="inputEmail3" class="col-form-label">整修部位</label>
+                      <div class="w-50">
+                        <select class="form-control form-control-sm">
+                          <option>FLG</option>
+                        </select>
+                      </div>
+                      <label for="inputEmail3" class="col-form-label">鈑修工時</label>
+                      <div class="w-50">
+                        <input class="form-control form-control-sm" />
+                      </div>
+                    </div>
+                    <div class="text-right my-3">
+                      <button type="button" class="btn btn-info">查詢</button>
+                      <button type="button" class="btn btn-secondary">清空</button>
+                    </div>
+                  </form>
+                  <div class="mb-3 text-right">
+                    <div class="table-responsive  table-striped mb-2">
+                      <table class="table-click table-sm bg-white table-bordered w-100">
+                        <thead>
+                          <tr>
+                            <th scope="col" class="text-right"> 項次 <i class="fas fa-caret-down"></i></th>
+                            <th scope="col">工程名<i class="fas fa-caret-down"></i></th>
+                            <th scope="col">分類<i class="fas fa-caret-down"></i></th>
+                            <th scope="col">問題點<i class="fas fa-caret-down"></i></th>
+                            <th scope="col">等級<i class="fas fa-caret-down"></i></th>
+                            <th scope="col">整修部位<i class="fas fa-caret-down"></i></th>
+                            <th scope="col">座標X<i class="fas fa-caret-down"></i></th>
+                            <th scope="col">座標Y<i class="fas fa-caret-down"></i></th>
+                            <th scope="col">位置<i class="fas fa-caret-down"></i></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row" class="text-right">1</th>
+                            <td>PB</td>
+                            <td>作業</td>
+                            <td>棉絮</td>
+                            <td>V1</td>
+                            <td>FLG</td>
+                            <td>168.5</td>
+                            <td>170.25</td>
+                            <td>CC</td>
+                          </tr>
+                          <tr>
+                            <th scope="row" class="text-right">2</th>
+                            <td>PB</td>
+                            <td>作業</td>
+                            <td>棉絮</td>
+                            <td>V1</td>
+                            <td>FLG</td>
+                            <td>168.5</td>
+                            <td>170.25</td>
+                            <td>CC</td>
+                          </tr>
+                          <tr>
+                            <th scope="row" class="text-right">3</th>
+                            <td>PB</td>
+                            <td>作業</td>
+                            <td>棉絮</td>
+                            <td>V1</td>
+                            <td>FLG</td>
+                            <td>168.5</td>
+                            <td>170.25</td>
+                            <td>CC</td>
+                          </tr>
+                          <tr>
+                            <th scope="row" class="text-right">4</th>
+                            <td>PB</td>
+                            <td>作業</td>
+                            <td>棉絮</td>
+                            <td>V1</td>
+                            <td>FLG</td>
+                            <td>168.5</td>
+                            <td>170.25</td>
+                            <td>CC</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="col">
+                      <button type="submit" class="btn btn-success mr-1">泡泡功能(增加附近點位數量)</button>
+                      <button type="submit" class="btn btn-danger" onclick=" history.back();">刪除點位</button>
+                      <button type="submit" class="btn btn-danger" onclick=" history.back();">刪除全部點位</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-3 tool-block">
+              <div class="col">
+                <div class="info-group d-flex">
+                  <div class="info-group-prepend col-6">單位</div>
+                  <div class="info-group-text col-6">table</div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="info-group d-flex">
+                  <div class="info-group-prepend col-6">使用者</div>
+                  <div class="info-group-text col-6">table</div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="info-group d-flex">
+                  <div class="info-group-prepend col-6">工號</div>
+                  <div class="info-group-text col-6">table</div>
+                </div>
+              </div>
+              <div class="col">
+                <button type="submit" class="btn btn-success mr-1">儲存</button>
+                <button type="submit" class="btn btn-secondary" onclick=" history.back();">回上一頁</button>
+              </div>
+            </div>
+            <div class="row detail-block mb-3">
+              <div class="col-md-5">
+                <div class="border rounded">
+                  <div class="px-3 py-2 bg-custom border-bottom rounded-top">全部點位顯示</div>
+                  <img class="img-fluid" src="../img/door.png" alt="">
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="border rounded">
+                  <div class="px-3 py-2 bg-custom border-bottom rounded-top">不良缺點數統計</div>
+                  <div class="d-flex flex-wrap defective-names px-3">
+                    <div class="defective-name py-1 align-items-center">
+                      <div class="legend legend-border-red legend-bg-purple" data-time="4" data-avg-time="4">棉絮</div>
+                      <div class="defective-amount">1</div>
+                    </div>
+                    <div class="defective-name py-1 align-items-center">
+                      <div class="legend legend-border-purple legend-bg-blue" data-time="5" data-avg-time="3">鐵屑</div>
+                      <div class="defective-amount">0</div>
+                    </div>
+                    <div class="defective-name py-1 align-items-center">
+                      <div class="legend legend-border-blue legend-bg-cyan" data-time="6" data-avg-time="5">破裂</div>
+                      <div class="defective-amount">3</div>
+                    </div>
+                    <div class="defective-name py-1 align-items-center">
+                      <div class="legend legend-border-cyan legend-bg-green" data-time="7" data-avg-time="6">生鏽</div>
+                      <div class="defective-amount">4</div>
+                    </div>
+                    <div class="defective-name py-1 align-items-center">
+                      <div class="legend legend-border-green legend-bg-lime" data-time="8" data-avg-time="7">膠粒</div>
+                      <div class="defective-amount">0</div>
+                    </div>
+                    <div class="defective-name py-1 align-items-center">
+                      <div class="legend legend-border-lime legend-bg-yellow" data-time="9" data-avg-time="8">異物</div>
+                      <div class="defective-amount">3</div>
+                    </div>
+                    <div class="defective-name py-1 align-items-center">
+                      <div class="legend legend-border-yellow legend-bg-orange" data-time="2" data-avg-time="9">變形</div>
+                      <div class="defective-amount">7</div>
+                    </div>
+                    <div class="defective-name py-1 align-items-center">
+                      <div class="legend legend-border-orange legend-bg-black" data-time="4" data-avg-time="4">皺</div>
+                      <div class="defective-amount">7</div>
+                    </div>
+                    <div class="defective-name py-1 align-items-center">
+                      <div class="legend legend-border-black legend-bg-brown" data-time="3" data-avg-time="5">星目</div>
+                      <div class="defective-amount">8</div>
+                    </div>
+                    <div class="defective-name py-1 align-items-center">
+                      <div class="legend legend-border-brown legend-bg-red" data-time="5" data-avg-time="6">碰撞</div>
+                      <div class="defective-amount">3</div>
+                    </div>
+                    <div class="defective-name py-1 align-items-center">
+                      <div class="legend legend-border-red legend-bg-brown" data-time="6" data-avg-time="7">粒點</div>
+                      <div class="defective-amount">0</div>
+                    </div>
+                    <div class="defective-name py-1 align-items-center">
+                      <div class="legend legend-border-purple legend-bg-black" data-time="7" data-avg-time="8">凹凸</div>
+                      <div class="defective-amount">0</div>
+                    </div>
+                    <div class="defective-name py-1 align-items-center">
+                      <div class="legend legend-border-blue legend-bg-orange" data-time="8" data-avg-time="9">毛頭</div>
+                      <div class="defective-amount">0</div>
+                    </div>
+                    <div class="defective-name py-1 align-items-center">
+                      <div class="legend legend-border-cyan legend-bg-yellow" data-time="9" data-avg-time="2">不順</div>
+                      <div class="defective-amount">5</div>
+                    </div>
+                    <div class="defective-name py-1 align-items-center">
+                      <div class="legend legend-border-green legend-bg-red" data-time="4" data-avg-time="4">刮傷</div>
+                      <div class="defective-amount">7</div>
+                    </div>
+                    <div class="defective-name py-1 align-items-center">
+                      <div class="legend legend-border-lime legend-bg-green" data-time="6" data-avg-time="5">緊縮</div>
+                      <div class="defective-amount">2</div>
+                    </div>
+                    <div class="defective-name py-1 align-items-center">
+                      <div class="legend legend-border-yellow legend-bg-cyan" data-time="5" data-avg-time="7">波浪</div>
+                      <div class="defective-amount">1</div>
+                    </div>
+                    <div class="defective-name py-1 align-items-center">
+                      <div class="legend legend-border-orange legend-bg-blue" data-time="7" data-avg-time="8">鋸齒</div>
+                      <div class="defective-amount">0</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="info-group d-flex mt-3">
+                  <span class="info-group-prepend col-9">全部鈑修工時(分)</span>
+                  <span class="info-group-text col-3">40</span>
+                </div>
+                <div class="info-group d-flex mt-3">
+                  <span class="info-group-prepend col-9">平均鈑修工時(分/片)</span>
+                  <span class="info-group-text col-3">5</span>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="border rounded">
+                  <div class="px-3 py-2 bg-custom border-bottom rounded-top">不良缺點數位置分布統計</div>
+                  <div class="d-flex defective-distribution flex-wrap px-3">
+                    <div class="py-2">AA<span class="defective-amount">0</span></div>
+                    <div class="py-2">AB<span class="defective-amount">0</span></div>
+                    <div class="py-2">AC<span class="defective-amount">0</span></div>
+                    <div class="py-2">AD<span class="defective-amount">0</span></div>
+                    <div class="py-2">AE<span class="defective-amount">0</span></div>
+                    <div class="py-2">BA<span class="defective-amount">0</span></div>
+                    <div class="py-2">BB<span class="defective-amount">0</span></div>
+                    <div class="py-2">BC<span class="defective-amount">0</span></div>
+                    <div class="py-2">BD<span class="defective-amount">0</span></div>
+                    <div class="py-2">BE<span class="defective-amount">0</span></div>
+                    <div class="py-2">CA<span class="defective-amount">0</span></div>
+                    <div class="py-2">CB<span class="defective-amount">0</span></div>
+                    <div class="py-2">CC<span class="defective-amount">0</span></div>
+                    <div class="py-2">CD<span class="defective-amount">0</span></div>
+                    <div class="py-2">CE<span class="defective-amount">0</span></div>
+                    <div class="py-2">DA<span class="defective-amount">0</span></div>
+                    <div class="py-2">DB<span class="defective-amount">0</span></div>
+                    <div class="py-2">DC<span class="defective-amount">0</span></div>
+                    <div class="py-2">DD<span class="defective-amount">0</span></div>
+                    <div class="py-2">DE<span class="defective-amount">0</span></div>
+                    <div class="py-2">EA<span class="defective-amount">0</span></div>
+                    <div class="py-2">EB<span class="defective-amount">0</span></div>
+                    <div class="py-2">EC<span class="defective-amount">0</span></div>
+                    <div class="py-2">ED<span class="defective-amount">0</span></div>
+                    <div class="py-2">EE<span class="defective-amount">0</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="../js/index.js"></script>
+      <script>
+        $(document).ready(function () {
+          $('.btn-input').click(function () {
+            $('.input-block').removeClass('d-none');
+            $('.tool-block').removeClass('d-none');
+            $('.detail-block').addClass('d-none');
+          });
+          $('.btn-show-detail').click(function () {
+            $('.input-block').addClass('d-none');
+            $('.tool-block').addClass('d-none');
+            $('.detail-block').removeClass('d-none');
+          });
+          $('.btn-input').click();
+        })
+      </script>
+</body>
+
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>裕隆汽車模具保養管理系統</title>
+  <link rel='stylesheet' href='../css/fontawesome-min.css'>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="stylesheet" href="../css/jquery-ui.min.css">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <script src="../js/jquery-3.3.1.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/jquery-ui-1.12.1.js"></script>
+  <div class="container-fluid page-container">
+    <div class="row h-100">
+      <div class="col-xl-2 col-lg-3 menu d-none">
+      </div>
+      <div class="main col-12">
+        <div class="row header py-2 align-items-center justify-content-between pr-3">
+        </div>
+        <div class="function row d-block">
+          <div class="function-title d-flex align-items-center px-4 justify-content-between" data-function-id="3-1"
+            data-page-mode="新增頁面">
+          </div>
+
+          <div class="px-lg-5 px-3 pt-4 pb-2 function-content">
+            <form class="form mb-3 query-form">
+              <div class="form-row">
+                <div class="form-group col-lg-6">
+                  <label for="inputEmail4">公司</label>
+                  <select id="inputState" class="form-control">
+                    <option selected>請選擇...</option>
+
+                    <option>C12</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-6">
+                  <label for="inputEmail4">單位</label>
+                  <select id="inputState" class="form-control">
+                    <option selected>請選擇...</option>
+                    <option>ROOF</option>
+                  </select>
+                </div>
+
+              </div>
+              <div class="form-row">
+                <div class="form-group col-lg-6">
+                  <label for="inputCity">帳號</label>
+                  <input type="text" class="form-control" id="inputCity">
+                </div>
+                <div class="form-group col-lg-6">
+                  <label for="inputState">密碼</label>
+                  <input type="password" class="form-control" id="inputCity">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-lg-6">
+                  <label for="inputCity">姓名</label>
+                  <input type="text" class="form-control" id="inputCity">
+                </div>
+                <div class="form-group col-lg-6">
+                  <label for="inputCity">Email</label>
+                  <input type="email" class="form-control" id="inputCity">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-lg-6">
+                  <label for="inputCity">職稱</label>
+                  <input type="text" class="form-control" id="inputCity">
+                </div>
+                <div class="form-group col-lg-6">
+                  <label for="inputCity">電話</label>
+                  <input type="text" class="form-control" id="inputCity">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-lg-4">
+                  <label for="inputCity">啟用日期</label>
+                  <input type="date" class="form-control" id="inputCity">
+                </div>
+                <div class="form-group col-lg-4">
+                  <label for="inputCity">停用日期</label>
+                  <input type="date" class="form-control" id="inputCity">
+                </div>
+                <div class="form-group col-lg-4">
+                  <label for="inputEmail4">狀態</label>
+                  <select id="inputState" class="form-control">
+                    <option selected>請選擇...</option>
+                    <option>1:正常</option>
+                    <option>2:鎖定</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-lg-12">
+                  <label for="inputCity">帳號指派群組設定</label>
+                  <div class="d-flex">
+                    <div class="flex-grow-1">
+                      <div class="table-responsive  table-striped table-select">
+                        <table class="table  bg-white">
+                          <thead>
+                            <tr>
+                              <th scope="col"> <label class="list-item-checkbox check-all">
+                                  <input type="checkbox" class="d-none">
+                                  <div class="checkbox-display"></div>
+                                </label></th>
+                              <th scope="col">可用群組 <i class="fas fa-caret-down"></i></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <label class="list-item-checkbox">
+                                  <input type="checkbox" class="d-none">
+                                  <div class="checkbox-display"></div>
+                                </label>
+                              </td>
+                              <td>系統管理員</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <label class="list-item-checkbox">
+                                  <input type="checkbox" class="d-none">
+                                  <div class="checkbox-display"></div>
+                                </label>
+                              </td>
+                              <td>保養人員群組</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <label class="list-item-checkbox">
+                                  <input type="checkbox" class="d-none">
+                                  <div class="checkbox-display"></div>
+                                </label>
+                              </td>
+                              <td>品管人員群組</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <label class="list-item-checkbox">
+                                  <input type="checkbox" class="d-none">
+                                  <div class="checkbox-display"></div>
+                                </label>
+                              </td>
+                              <td>生產線群組</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <label class="list-item-checkbox">
+                                  <input type="checkbox" class="d-none">
+                                  <div class="checkbox-display"></div>
+                                </label>
+                              </td>
+                              <td>主管群組</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="btn-group-vertical px-3">
+                      <button class="btn d-block btn-success"><i class="fas fa-arrow-right mr-2"></i>加入</button><br>
+                      <button class="btn d-block btn-danger"><i class="fas fa-arrow-left mr-2"></i>移除</button>
+                    </div>
+
+                    <div class="flex-grow-1">
+                      <div class="table-responsive  table-striped table-select">
+                        <table class="table  bg-white">
+                          <thead>
+                            <tr>
+                              <th scope="col"> <label class="list-item-checkbox check-all">
+                                  <input type="checkbox" class="d-none">
+                                  <div class="checkbox-display"></div>
+                                </label></th>
+                              <th scope="col">已指派群組 <i class="fas fa-caret-down"></i></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <label class="list-item-checkbox">
+                                  <input type="checkbox" class="d-none">
+                                  <div class="checkbox-display"></div>
+                                </label>
+                              </td>
+                              <td>系統管理員</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <label class="list-item-checkbox">
+                                  <input type="checkbox" class="d-none">
+                                  <div class="checkbox-display"></div>
+                                </label>
+                              </td>
+                              <td>保養人員群組</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <div class="mx-auto row justify-content-end mb-3">
+              <button type="submit" class="btn btn-success mr-1">確定</button>
+              <button type="submit" class="btn btn-secondary mr-1" onclick=" history.back();">回上一頁</button>
+              <button type="submit" class="btn btn-danger">清空</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../js/index.js"></script>
+</body>
+
+</html>
